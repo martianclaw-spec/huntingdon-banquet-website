@@ -602,7 +602,11 @@ a.btn-primary { display: inline-block; text-decoration: none; }
   h2.display { font-size: 36px; }
   .display-italic { font-size: 28px; }
   .site-header { padding: 20px 20px; }
-  .notice-bar { padding: 12px 20px; }
+  .notice-bar { padding: 10px 20px; font-size: 13px; }
+  .notice-bar-inner { gap: 4px 14px; }
+  /* mock-inherited inline display sizes scale down on small screens */
+  [style*="font-size:52px"] { font-size: 36px !important; }
+  [style*="font-size:34px"] { font-size: 26px !important; }
   .site-footer { padding: 56px 20px; }
   .row-200 { grid-template-columns: 1fr; gap: 8px; }
   .rate-price { font-size: 34px; }
@@ -620,6 +624,11 @@ a.btn-primary { display: inline-block; text-decoration: none; }
 
 @media (max-width: 560px) {
   .occ-grid { grid-template-columns: 1fr; }
+  /* segmented control: full-width, compact, no overflow */
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+  .seg button { padding: 12px 4px; font-size: 11px; letter-spacing: 0.06em; }
+  /* booking form: stack fields */
+  #widget form { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
