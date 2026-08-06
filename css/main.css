@@ -235,6 +235,43 @@ h2.display { font-size: 52px; }
 
 /* ---- site chrome ---- */
 
+/* Coming-soon notice — the venue is mid-renovation; photos show it as-is */
+.notice-bar {
+  background: var(--charcoal);
+  color: rgba(239,235,226,.85);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 40px;
+}
+.notice-bar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px 18px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.notice-label {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--pine);
+  white-space: nowrap;
+}
+.notice-bar a {
+  color: var(--pine);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,169,126,.5);
+  transition: color .15s ease, border-color .15s ease;
+  white-space: nowrap;
+}
+.notice-bar a:hover { color: var(--plaster); border-color: var(--brick); }
+
 .site-header { padding: 28px 40px; border-bottom: 1px solid var(--pine); }
 .site-header-inner {
   max-width: 1180px;
@@ -565,6 +602,7 @@ a.btn-primary { display: inline-block; text-decoration: none; }
   h2.display { font-size: 36px; }
   .display-italic { font-size: 28px; }
   .site-header { padding: 20px 20px; }
+  .notice-bar { padding: 12px 20px; }
   .site-footer { padding: 56px 20px; }
   .row-200 { grid-template-columns: 1fr; gap: 8px; }
   .rate-price { font-size: 34px; }
