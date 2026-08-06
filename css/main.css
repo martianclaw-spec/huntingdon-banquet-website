@@ -310,6 +310,14 @@ h2.display { font-size: 52px; }
 .arch--shallow { clip-path: url(#tarchArchShallow); }
 .arch--slate { background: var(--slate); }
 
+.arch picture, .hero-media picture { display: block; width: 100%; height: 100%; }
+.arch img, .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Drop-in placeholder naming the intended shot; replace with a real
    <img> (object-fit: cover) inside the same .arch wrapper. */
 .img-slot {
