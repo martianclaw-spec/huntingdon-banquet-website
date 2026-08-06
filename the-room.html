@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script src="config.js"></script>
+<script src="js/site.js" defer></script>
+<script src="js/room.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="index.html" data-venue-name>Twelve Arches</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="the-room.html" aria-current="page">The room</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="for-your-guests.html">For your guests</a>
+      <a class="nav-cta" href="book-a-tour.html">Book a tour</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <!-- header 4/8 -->
+    <div class="grid-48" style="align-items:end; padding-bottom:56px; border-bottom:1px solid #C9A97E;">
+      <div>
+        <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
+        <div class="u eyebrow">The room</div>
+      </div>
+      <div>
+        <h1 class="display">Every layout works <em>around the posts</em></h1>
+        <p class="lede" style="max-width:62ch;">Six heavy timber posts stand in the open floor, original to the 1890s frame. They&rsquo;re the first thing every planner asks about, so here&rsquo;s the honest answer: we draw every setup around them. Switch the plan and see.</p>
+      </div>
+    </div>
+
+    <!-- plan block -->
+    <div style="padding:56px 0 0;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+        <div class="seg" role="group" aria-label="Floor plan configuration">
+          <button type="button" data-mode="dinner" aria-pressed="true">Seated dinner</button>
+          <button type="button" data-mode="cocktail" aria-pressed="false">Cocktail</button>
+          <button type="button" data-mode="ceremony" aria-pressed="false">Ceremony</button>
+        </div>
+        <div class="u eyebrow">80&prime; &times; 50&prime; &middot; 4,500 sq ft</div>
+      </div>
+
+      <!-- readout -->
+      <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px 32px; border-top:1px solid #C9A97E; border-bottom:1px solid #C9A97E; padding:18px 0; margin:24px 0 8px;" aria-live="polite">
+        <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+          <span id="mode-label" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:34px; line-height:1;">Seated dinner</span>
+          <span id="seats-line" class="u eyebrow" style="color:#A05B45; font-weight:600;"></span>
+        </div>
+        <div id="config-line" class="u eyebrow"></div>
+      </div>
+
+      <!-- plan drawing (inline SVG, three <g> layers cross-faded) -->
+      <div id="plan" style="min-height:440px;"></div>
+    </div>
+
+    <!-- specs 4/8 -->
+    <div class="grid-48 sect">
+      <div>
+        <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
+        <h2 style="font-family:'Canela','Newsreader',serif; font-weight:400; font-size:34px; line-height:1.1; margin:0;">Specifications</h2>
+        <p class="lede" style="margin-top:16px; max-width:34ch;">The plain facts a planner needs before they walk the room.</p>
+      </div>
+      <div class="rows">
+        <div class="row-200">
+          <div class="u">Dimensions</div>
+          <div>Approx. 80&prime; &times; 50&prime; &middot; 4,500 square feet of open floor.</div>
+        </div>
+        <div class="row-200">
+          <div class="u">Capacity</div>
+          <div>Up to 250 guests.</div>
+        </div>
+        <div class="row-200">
+          <div class="u">Access</div>
+          <div>Second floor, elevator served, ADA compliant.</div>
+        </div>
+        <div class="row-200">
+          <div class="u">Included</div>
+          <div>Tables, chairs, setup and teardown, floor-length linens, an event attendant, and wifi.</div>
+        </div>
+        <div class="row-200">
+          <div class="u" style="color:#A05B45;">In-house</div>
+          <div><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.2;">A full bar &mdash; licensed and staffed by the venue.</span><br>Plus house sound system and projection. Ours to run, not a rental you arrange.</div>
+        </div>
+        <div class="row-200">
+          <div class="u">Catering</div>
+          <div>Bring in any licensed caterer you like. No food is prepared on site &mdash; there&rsquo;s no commercial kitchen, so plan for a caterer who finishes off-premises.</div>
+        </div>
+        <div class="row-200">
+          <div class="u">Parking &amp; load-in</div>
+          <div>Municipal lot behind the building and metered street parking on Washington. Rear load-in with elevator access to the second floor; deliveries and rentals come up the same way.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div>
+      <a class="wordmark" href="index.html" data-venue-name>Twelve Arches</a>
+      <p class="addr">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="the-room.html">The room</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="for-your-guests.html">For your guests</a>
+      <a href="book-a-tour.html">Book a tour</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

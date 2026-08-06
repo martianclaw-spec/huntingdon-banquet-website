@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script src="config.js"></script>
+<script src="js/site.js" defer></script>
+<script src="js/book-a-tour.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="index.html" data-venue-name>Twelve Arches</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="the-room.html">The room</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="for-your-guests.html">For your guests</a>
+      <a class="nav-cta" href="book-a-tour.html" aria-current="page">Book a tour</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="container">
+
+    <!-- BOOK A TOUR header -->
+    <header id="book" class="grid-48" style="align-items:end; padding-bottom:56px; border-bottom:1px solid #C9A97E;">
+      <div>
+        <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
+        <div class="u eyebrow">Book a tour</div>
+      </div>
+      <div>
+        <h1 class="display">Come see <em>the room</em></h1>
+        <p class="lede" style="max-width:60ch;">Pick a day and a time and we&rsquo;ll walk you through it &mdash; about thirty minutes, no deposit, no account to make. Just tell us how to reach you.</p>
+      </div>
+    </header>
+
+    <!-- WIDGET (pre-submit) -->
+    <section id="widget" class="grid-57" style="padding:64px 0 0;" aria-label="Book a tour">
+
+      <!-- calendar -->
+      <div>
+        <div class="cal-head">
+          <div class="cal-month" id="book-month"></div>
+          <div class="cal-nav">
+            <button type="button" class="navbtn" id="book-prev" aria-label="Previous month">&larr;</button>
+            <button type="button" class="navbtn" id="book-next" aria-label="Next month">&rarr;</button>
+          </div>
+        </div>
+        <div id="book-calendar"></div>
+        <div class="legend">
+          <span><span class="chip" style="background:#EFEBE2; border:1px solid #C9A97E;"></span>Open for tours</span>
+          <span><span class="chip" style="background:#2B2B27;"></span>Selected</span>
+          <span><span class="chip" style="background:#EFEBE2; opacity:.4; border:1px solid #C9A97E;"></span>Closed</span>
+        </div>
+      </div>
+
+      <!-- slots + form -->
+      <div>
+        <div class="u" style="margin-bottom:6px;">Selected</div>
+        <div class="display-italic" id="selected-label" aria-live="polite" style="padding-bottom:24px; border-bottom:1px solid #C9A97E;">Select a date</div>
+
+        <div class="u" style="margin:28px 0 14px;">Available times</div>
+        <div id="slots"></div>
+
+        <form style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px;" onsubmit="return false;">
+          <div class="field" style="grid-column:1 / -1;">
+            <label class="u" for="f-name">Name</label>
+            <input class="tf" id="f-name" type="text" autocomplete="name" placeholder="First and last">
+          </div>
+          <div class="field">
+            <label class="u" for="f-email">Email</label>
+            <input class="tf" id="f-email" type="email" autocomplete="email" placeholder="you@email.com">
+          </div>
+          <div class="field">
+            <label class="u" for="f-phone">Phone</label>
+            <input class="tf" id="f-phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000">
+          </div>
+          <div class="field">
+            <label class="u" for="f-guests">Guest count</label>
+            <input class="tf" id="f-guests" type="number" min="1" placeholder="Approx.">
+          </div>
+          <div class="field">
+            <label class="u" for="f-occasion">Occasion</label>
+            <select class="tf" id="f-occasion">
+              <option value="">Select an occasion</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Celebration of life">Celebration of life</option>
+              <option value="Shower or party">Shower or party</option>
+              <option value="Graduation">Graduation</option>
+              <option value="Class reunion">Class reunion</option>
+              <option value="Church or civic banquet">Church or civic banquet</option>
+              <option value="Corporate or meeting">Corporate or meeting</option>
+            </select>
+          </div>
+        </form>
+
+        <div style="display:flex; align-items:center; gap:24px; margin-top:32px;">
+          <button type="button" class="btn-primary" id="confirm" disabled>Book a tour</button>
+          <span class="u" id="confirm-hint" style="font-weight:400;" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION -->
+    <section id="confirmation" class="grid-48" style="padding:64px 0 0;" hidden aria-label="Tour confirmed">
+      <div>
+        <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#A05B45" stroke-width="1.5"/></svg>
+        <div class="u eyebrow" style="color:#A05B45;">You&rsquo;re on the calendar</div>
+      </div>
+      <div>
+        <h2 class="display" style="line-height:1.1;">See you <span id="conf-date"></span>, <em id="conf-slot"></em></h2>
+        <p class="lede" style="max-width:58ch;">A confirmation is on its way to <span id="conf-email"></span>. If anything changes, just reply to it &mdash; a real person reads that inbox.</p>
+
+        <div class="rows" style="margin-top:48px;">
+          <div class="row-200">
+            <div class="u">Where</div>
+            <div>708 Washington Street, second floor &middot; Huntingdon, PA. Come to the Washington Street door and take the elevator to two.</div>
+          </div>
+          <div class="row-200">
+            <div class="u">What to expect</div>
+            <div>About thirty minutes. We&rsquo;ll walk the room, talk dates and headcount, and answer the bar and catering questions. Nothing to bring &mdash; though if you&rsquo;ve got a board of ideas, bring it.</div>
+          </div>
+          <div class="row-200">
+            <div class="u">Parking</div>
+            <div>Metered street parking out front, free after 6pm and on weekends, plus a municipal lot behind the building.</div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-ghost" id="reset" style="margin-top:40px;">Book another time</button>
+      </div>
+    </section>
+
+    <!-- CHECK YOUR DATE -->
+    <section id="check" style="padding:120px 0 0;" aria-label="Check your date">
+      <div class="grid-48" style="align-items:end; padding-bottom:48px; border-bottom:1px solid #C9A97E;">
+        <div>
+          <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
+          <div class="u eyebrow">Check your date</div>
+        </div>
+        <div>
+          <h2 class="display">Is your date open?</h2>
+          <p class="lede" style="margin-top:20px; max-width:58ch;">A quick look, no booking. Tap a day to see where it stands &mdash; then start an inquiry and we&rsquo;ll hold it for you.</p>
+        </div>
+      </div>
+
+      <div class="grid-57" style="padding:48px 0 0;">
+        <div>
+          <div class="cal-head">
+            <div class="cal-month" id="look-month"></div>
+            <div class="cal-nav">
+              <button type="button" class="navbtn" id="look-prev" aria-label="Previous month">&larr;</button>
+              <button type="button" class="navbtn" id="look-next" aria-label="Next month">&rarr;</button>
+            </div>
+          </div>
+          <div id="look-calendar"></div>
+          <div class="legend">
+            <span><span class="chip" style="background:#EFEBE2; border-bottom:3px solid #C9A97E;"></span>Open</span>
+            <span><span class="chip" style="background:rgba(86,86,79,.18);"></span>On hold</span>
+            <span><span class="chip" style="background:#2B2B27;"></span>Booked</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="u" style="margin-bottom:6px;">Status</div>
+          <div class="display-italic" id="look-headline" aria-live="polite"></div>
+          <p class="lede" id="look-detail" style="margin-top:20px; max-width:52ch;"></p>
+          <a href="#book" class="tarch-link u eyebrow" style="display:inline-block; margin-top:32px; border-bottom-width:1px; color:#A05B45;">Start an inquiry &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div>
+      <a class="wordmark" href="index.html" data-venue-name>Twelve Arches</a>
+      <p class="addr">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="the-room.html">The room</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="for-your-guests.html">For your guests</a>
+      <a href="book-a-tour.html">Book a tour</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
