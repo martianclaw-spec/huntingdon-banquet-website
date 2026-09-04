@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/content.js" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
@@ -20,8 +21,8 @@
 
 <div class="notice-bar">
   <div class="notice-bar-inner">
-    <span class="notice-label">Opening soon</span>
-    <span>The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
+    <span class="notice-label" data-content="notice.label">Opening soon</span>
+    <span data-content="notice.text">The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
     <a href="book-a-tour.html">Book an early tour &rarr;</a>
   </div>
 </div>
@@ -48,8 +49,8 @@
         <div class="u eyebrow">For your guests</div>
       </div>
       <div>
-        <h1 class="display">Where to stay, <em>eat, and park</em></h1>
-        <p class="lede" style="max-width:60ch;">Send this page to your list. Everything below is within a few blocks of the hall in downtown Huntingdon &mdash; the walkable options are marked, and the addresses are here to copy straight into a phone.</p>
+        <h1 class="display" data-content="guests.headline" data-content-html>Where to stay, <em>eat, and park</em></h1>
+        <p class="lede" style="max-width:60ch;" data-content="guests.intro">Send this page to your list. Everything below is within a few blocks of the hall in downtown Huntingdon &mdash; the walkable options are marked, and the addresses are here to copy straight into a phone.</p>
       </div>
     </div>
 
@@ -58,35 +59,35 @@
       <div>
         <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
         <h2 style="font-family:'Canela','Newsreader',serif; font-weight:400; font-size:34px; line-height:1.1; margin:0;">Stay</h2>
-        <p class="lede" style="margin-top:16px; max-width:34ch;">One place you can walk to, two a short drive out. Book early for peak-season Saturdays.</p>
+        <p class="lede" style="margin-top:16px; max-width:34ch;" data-content="guests.stay.intro">One place you can walk to, two a short drive out. Book early for peak-season Saturdays.</p>
       </div>
       <div class="rows">
         <div class="place-row">
           <div class="arch arch--shallow" style="height:200px;"><div class="img-slot">Gage Mansion B&amp;B</div></div>
           <div>
-            <div class="display-italic" style="font-size:22px; line-height:1.15;">Gage Mansion B&amp;B</div>
-            <div class="u" style="font-weight:500; margin-top:8px;">Penn Street &middot; ~4 blocks</div>
-            <p style="margin:12px 0 0; max-width:52ch;">A restored Victorian inn, the closest bed to the hall. Small &mdash; a handful of rooms &mdash; so reserve it first for the wedding party.</p>
+            <div class="display-italic" style="font-size:22px; line-height:1.15;" data-content="guests.stay.1.name">Gage Mansion B&amp;B</div>
+            <div class="u" style="font-weight:500; margin-top:8px;" data-content="guests.stay.1.distance">Penn Street &middot; ~4 blocks</div>
+            <p style="margin:12px 0 0; max-width:52ch;" data-content="guests.stay.1.desc">A restored Victorian inn, the closest bed to the hall. Small &mdash; a handful of rooms &mdash; so reserve it first for the wedding party.</p>
           </div>
-          <div class="u" style="color:#A05B45; white-space:nowrap;">Walkable</div>
+          <div class="u" style="color:#A05B45; white-space:nowrap;" data-content="guests.stay.1.tag">Walkable</div>
         </div>
         <div class="place-row">
           <div class="arch arch--shallow" style="height:200px;"><div class="img-slot">Comfort Inn</div></div>
           <div>
-            <div class="display-italic" style="font-size:22px; line-height:1.15;">Comfort Inn</div>
-            <div class="u" style="font-weight:500; margin-top:8px;">S 4th Street &middot; ~0.6 mi</div>
-            <p style="margin:12px 0 0; max-width:52ch;">Reliable chain rates and free parking, a five-minute drive or a fifteen-minute walk downhill into town.</p>
+            <div class="display-italic" style="font-size:22px; line-height:1.15;" data-content="guests.stay.2.name">Comfort Inn</div>
+            <div class="u" style="font-weight:500; margin-top:8px;" data-content="guests.stay.2.distance">S 4th Street &middot; ~0.6 mi</div>
+            <p style="margin:12px 0 0; max-width:52ch;" data-content="guests.stay.2.desc">Reliable chain rates and free parking, a five-minute drive or a fifteen-minute walk downhill into town.</p>
           </div>
-          <div class="u" style="white-space:nowrap;">Short drive</div>
+          <div class="u" style="white-space:nowrap;" data-content="guests.stay.2.tag">Short drive</div>
         </div>
         <div class="place-row">
           <div class="arch arch--shallow" style="height:200px;"><div class="img-slot">Fairfield by Marriott</div></div>
           <div>
-            <div class="display-italic" style="font-size:22px; line-height:1.15;">Fairfield by Marriott</div>
-            <div class="u" style="font-weight:500; margin-top:8px;">Route 22 &middot; ~2.5 mi</div>
-            <p style="margin:12px 0 0; max-width:52ch;">The newest rooms and the largest block, out on the highway. Best for guests driving in who want easy parking and a quick morning exit.</p>
+            <div class="display-italic" style="font-size:22px; line-height:1.15;" data-content="guests.stay.3.name">Fairfield by Marriott</div>
+            <div class="u" style="font-weight:500; margin-top:8px;" data-content="guests.stay.3.distance">Route 22 &middot; ~2.5 mi</div>
+            <p style="margin:12px 0 0; max-width:52ch;" data-content="guests.stay.3.desc">The newest rooms and the largest block, out on the highway. Best for guests driving in who want easy parking and a quick morning exit.</p>
           </div>
-          <div class="u" style="white-space:nowrap;">Drive</div>
+          <div class="u" style="white-space:nowrap;" data-content="guests.stay.3.tag">Drive</div>
         </div>
       </div>
     </section>
@@ -96,35 +97,35 @@
       <div>
         <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
         <h2 style="font-family:'Canela','Newsreader',serif; font-weight:400; font-size:34px; line-height:1.1; margin:0;">Eat</h2>
-        <p class="lede" style="margin-top:16px; max-width:34ch;">Breakfast, a late drink, or somewhere to send the out-of-towners the night before &mdash; all on foot.</p>
+        <p class="lede" style="margin-top:16px; max-width:34ch;" data-content="guests.eat.intro">Breakfast, a late drink, or somewhere to send the out-of-towners the night before &mdash; all on foot.</p>
       </div>
       <div class="rows">
         <div class="place-row">
           <div class="arch arch--shallow" style="height:200px;"><div class="img-slot">Muddy Run Tavern</div></div>
           <div>
-            <div class="display-italic" style="font-size:22px; line-height:1.15;">Muddy Run Tavern</div>
-            <div class="u" style="font-weight:500; margin-top:8px;">Same building, ground floor</div>
-            <p style="margin:12px 0 0; max-width:52ch;">Downstairs from the hall &mdash; a separate business, but the most convenient last drink in town. Where the after-party tends to end up.</p>
+            <div class="display-italic" style="font-size:22px; line-height:1.15;" data-content="guests.eat.1.name">Muddy Run Tavern</div>
+            <div class="u" style="font-weight:500; margin-top:8px;" data-content="guests.eat.1.distance">Same building, ground floor</div>
+            <p style="margin:12px 0 0; max-width:52ch;" data-content="guests.eat.1.desc">Downstairs from the hall &mdash; a separate business, but the most convenient last drink in town. Where the after-party tends to end up.</p>
           </div>
-          <div class="u" style="color:#A05B45; white-space:nowrap;">One floor down</div>
+          <div class="u" style="color:#A05B45; white-space:nowrap;" data-content="guests.eat.1.tag">One floor down</div>
         </div>
         <div class="place-row">
           <div class="arch arch--shallow" style="height:200px;"><div class="img-slot">Sazon Latina</div></div>
           <div>
-            <div class="display-italic" style="font-size:22px; line-height:1.15;">Sazon Latina</div>
-            <div class="u" style="font-weight:500; margin-top:8px;">Washington Street &middot; across the street</div>
-            <p style="margin:12px 0 0; max-width:52ch;">Latin plates directly across from the front door. Good for a relaxed rehearsal lunch or feeding early arrivals.</p>
+            <div class="display-italic" style="font-size:22px; line-height:1.15;" data-content="guests.eat.2.name">Sazon Latina</div>
+            <div class="u" style="font-weight:500; margin-top:8px;" data-content="guests.eat.2.distance">Washington Street &middot; across the street</div>
+            <p style="margin:12px 0 0; max-width:52ch;" data-content="guests.eat.2.desc">Latin plates directly across from the front door. Good for a relaxed rehearsal lunch or feeding early arrivals.</p>
           </div>
-          <div class="u" style="color:#A05B45; white-space:nowrap;">Walkable</div>
+          <div class="u" style="color:#A05B45; white-space:nowrap;" data-content="guests.eat.2.tag">Walkable</div>
         </div>
         <div class="place-row">
           <div class="arch arch--shallow" style="height:200px;"><div class="img-slot">Downtown Washington Street</div></div>
           <div>
-            <div class="display-italic" style="font-size:22px; line-height:1.15;">Plus a block of more</div>
-            <div class="u" style="font-weight:500; margin-top:8px;">Within one block</div>
-            <p style="margin:12px 0 0; max-width:52ch;">Coffee, pizza, a brewpub, and a diner are all within a block on Washington and Penn. We keep a current short list at the door &mdash; ask your attendant.</p>
+            <div class="display-italic" style="font-size:22px; line-height:1.15;" data-content="guests.eat.3.name">Plus a block of more</div>
+            <div class="u" style="font-weight:500; margin-top:8px;" data-content="guests.eat.3.distance">Within one block</div>
+            <p style="margin:12px 0 0; max-width:52ch;" data-content="guests.eat.3.desc">Coffee, pizza, a brewpub, and a diner are all within a block on Washington and Penn. We keep a current short list at the door &mdash; ask your attendant.</p>
           </div>
-          <div class="u" style="color:#A05B45; white-space:nowrap;">Walkable</div>
+          <div class="u" style="color:#A05B45; white-space:nowrap;" data-content="guests.eat.3.tag">Walkable</div>
         </div>
       </div>
     </section>
@@ -144,15 +145,15 @@
             <div class="rows" style="margin-top:48px;">
               <div class="row-200">
                 <div class="u" style="color:#C9A97E;">Getting up</div>
-                <div style="color:rgba(239,235,226,.9);">Elevator and stairs from the Washington Street entrance to the second floor. The elevator is ADA accessible &mdash; guests using it come up the same way as everyone else.</div>
+                <div style="color:rgba(239,235,226,.9);" data-content="guests.getting_here.up">Elevator and stairs from the Washington Street entrance to the second floor. The elevator is ADA accessible &mdash; guests using it come up the same way as everyone else.</div>
               </div>
               <div class="row-200">
                 <div class="u" style="color:#C9A97E;">Parking</div>
-                <div style="color:rgba(239,235,226,.9);">Metered street parking on Washington is free after 6pm and on weekends. A municipal lot sits behind the building, a half-block walk to the door.</div>
+                <div style="color:rgba(239,235,226,.9);" data-content="guests.getting_here.parking">Metered street parking on Washington is free after 6pm and on weekends. A municipal lot sits behind the building, a half-block walk to the door.</div>
               </div>
               <div class="row-200">
                 <div class="u" style="color:#C9A97E;">Drop-off</div>
-                <div style="color:rgba(239,235,226,.9);">Pull up right out front on Washington for anyone who&rsquo;d rather not walk from the lot. Rideshare works well in town and back to the hotels.</div>
+                <div style="color:rgba(239,235,226,.9);" data-content="guests.getting_here.dropoff">Pull up right out front on Washington for anyone who&rsquo;d rather not walk from the lot. Rideshare works well in town and back to the hotels.</div>
               </div>
             </div>
           </div>
@@ -167,7 +168,7 @@
   <div class="site-footer-inner">
     <div>
       <a class="wordmark" href="index.html" data-venue-name>The Loft at 708</a>
-      <p class="addr">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+      <p class="addr" data-content="contact.address">708 Washington Street, second floor &middot; Huntingdon, PA</p>
     </div>
     <nav aria-label="Footer">
       <a href="the-room.html">The room</a>

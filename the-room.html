@@ -11,13 +11,14 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/content.js" defer></script>
 <script src="js/room.js" defer></script>
 </head>
 <body>
 <div class="notice-bar">
   <div class="notice-bar-inner">
-    <span class="notice-label">Opening soon</span>
-    <span>The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
+    <span class="notice-label" data-content="notice.label">Opening soon</span>
+    <span data-content="notice.text">The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
     <a href="book-a-tour.html">Book an early tour &rarr;</a>
   </div>
 </div>
@@ -44,8 +45,8 @@
         <div class="u eyebrow">The room</div>
       </div>
       <div>
-        <h1 class="display">Every layout works <em>around the posts</em></h1>
-        <p class="lede" style="max-width:62ch;">Six heavy timber posts stand in the open floor, original to the 1890s frame. They&rsquo;re the first thing every planner asks about, so here&rsquo;s the honest answer: we draw every setup around them. Switch the plan and see.</p>
+        <h1 class="display" data-content="room.headline" data-content-html>Every layout works <em>around the posts</em></h1>
+        <p class="lede" style="max-width:62ch;" data-content="room.intro">Six heavy timber posts stand in the open floor, original to the 1890s frame. They&rsquo;re the first thing every planner asks about, so here&rsquo;s the honest answer: we draw every setup around them. Switch the plan and see.</p>
       </div>
     </div>
 
@@ -57,7 +58,7 @@
           <button type="button" data-mode="cocktail" aria-pressed="false">Cocktail</button>
           <button type="button" data-mode="ceremony" aria-pressed="false">Ceremony</button>
         </div>
-        <div class="u eyebrow">80&prime; &times; 50&prime; &middot; 4,500 sq ft</div>
+        <div class="u eyebrow" data-content="room.dimensions">80&prime; &times; 50&prime; &middot; 4,500 sq ft</div>
       </div>
 
       <!-- readout -->
@@ -71,7 +72,7 @@
 
       <!-- plan drawing (inline SVG, three <g> layers cross-faded) -->
       <div id="plan" style="min-height:440px;"></div>
-      <p class="u" style="font-weight:400; margin:8px 0 0; max-width:70ch;">Illustrative &mdash; the room is mid-renovation and final layouts, counts, and positions will be confirmed as it&rsquo;s finished. Walk it with us and we&rsquo;ll draw yours.</p>
+      <p class="u" style="font-weight:400; margin:8px 0 0; max-width:70ch;" data-content="room.plan_note">Illustrative &mdash; the room is mid-renovation and final layouts, counts, and positions will be confirmed as it&rsquo;s finished. Walk it with us and we&rsquo;ll draw yours.</p>
     </div>
 
     <!-- specs 4/8 -->
@@ -84,31 +85,31 @@
       <div class="rows">
         <div class="row-200">
           <div class="u">Dimensions</div>
-          <div>Approx. 80&prime; &times; 50&prime; &middot; 4,500 square feet of open floor.</div>
+          <div data-content="room.specs.dimensions">Approx. 80&prime; &times; 50&prime; &middot; 4,500 square feet of open floor.</div>
         </div>
         <div class="row-200">
           <div class="u">Capacity</div>
-          <div>Up to 250 guests.</div>
+          <div>Up to <span data-content="venue.capacity">250</span> guests.</div>
         </div>
         <div class="row-200">
           <div class="u">Access</div>
-          <div>Second floor, elevator served, ADA compliant.</div>
+          <div data-content="room.specs.access">Second floor, elevator served, ADA compliant.</div>
         </div>
         <div class="row-200">
           <div class="u">Included</div>
-          <div>Tables, chairs, setup and teardown, floor-length linens, an event attendant, and wifi.</div>
+          <div data-content="room.specs.included">Tables, chairs, setup and teardown, floor-length linens, an event attendant, and wifi.</div>
         </div>
         <div class="row-200">
           <div class="u" style="color:#A05B45;">In-house</div>
-          <div><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.2;">A full bar &mdash; licensed and staffed by the venue.</span><br>Plus house sound system and projection. Ours to run, not a rental you arrange.</div>
+          <div data-content="room.specs.inhouse" data-content-html><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.2;">A full bar &mdash; licensed and staffed by the venue.</span><br>Plus house sound system and projection. Ours to run, not a rental you arrange.</div>
         </div>
         <div class="row-200">
           <div class="u">Catering</div>
-          <div>Bring in any licensed caterer you like. No food is prepared on site &mdash; there&rsquo;s no commercial kitchen, so plan for a caterer who finishes off-premises.</div>
+          <div data-content="room.specs.catering">Bring in any licensed caterer you like. No food is prepared on site &mdash; there&rsquo;s no commercial kitchen, so plan for a caterer who finishes off-premises.</div>
         </div>
         <div class="row-200">
           <div class="u">Parking &amp; load-in</div>
-          <div>Municipal lot behind the building and metered street parking on Washington. Rear load-in with elevator access to the second floor; deliveries and rentals come up the same way.</div>
+          <div data-content="room.specs.parking">Municipal lot behind the building and metered street parking on Washington. Rear load-in with elevator access to the second floor; deliveries and rentals come up the same way.</div>
         </div>
       </div>
     </div>
@@ -120,7 +121,7 @@
   <div class="site-footer-inner">
     <div>
       <a class="wordmark" href="index.html" data-venue-name>The Loft at 708</a>
-      <p class="addr">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+      <p class="addr" data-content="contact.address">708 Washington Street, second floor &middot; Huntingdon, PA</p>
     </div>
     <nav aria-label="Footer">
       <a href="the-room.html">The room</a>

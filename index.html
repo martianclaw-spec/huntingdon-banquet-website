@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/content.js" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
@@ -20,8 +21,8 @@
 
 <div class="notice-bar">
   <div class="notice-bar-inner">
-    <span class="notice-label">Opening soon</span>
-    <span>The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
+    <span class="notice-label" data-content="notice.label">Opening soon</span>
+    <span data-content="notice.text">The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
     <a href="book-a-tour.html">Book an early tour &rarr;</a>
   </div>
 </div>
@@ -45,7 +46,7 @@
     <div class="container">
       <div class="hero">
         <div class="hero-media tarch-hero-img">
-          <picture>
+          <picture data-content="hero.image">
             <source srcset="images/01-arched-windows-wide.webp" type="image/webp">
             <img src="images/01-arched-windows-wide.jpg" alt="The hall's long wall of tall arched windows in exposed red brick" fetchpriority="high">
           </picture>
@@ -53,8 +54,8 @@
         <div class="hero-scrim"></div>
         <div class="hero-copy">
           <div style="max-width:1000px;">
-            <h1 class="tarch-fade d2 display">Exposed brick, tall windows,<br>and a bar that&rsquo;s ours.</h1>
-            <p class="tarch-fade d3 hero-sub">A 250-guest event hall on the second floor of an 1890s building in downtown Huntingdon.</p>
+            <h1 class="tarch-fade d2 display" data-content="hero.headline" data-content-html>Exposed brick, tall windows,<br>and a bar that&rsquo;s ours.</h1>
+            <p class="tarch-fade d3 hero-sub" data-content="hero.subheadline">A 250-guest event hall on the second floor of an 1890s building in downtown Huntingdon.</p>
             <div class="tarch-fade d4 hero-actions">
               <a class="btn-primary" href="book-a-tour.html">Book a tour</a>
               <a href="book-a-tour.html#check" class="tarch-link u eyebrow" style="color:#EFEBE2; border-color:rgba(201,169,126,.6);">Check your date</a>
@@ -69,7 +70,7 @@
   <section class="gutter">
     <div class="container" style="border-top:1px solid #C9A97E; margin-top:28px;">
       <ul style="list-style:none; margin:0; padding:20px 0; display:flex; flex-wrap:wrap; align-items:center; gap:14px 0; font-family:'Switzer',sans-serif; text-transform:uppercase; letter-spacing:0.12em; font-size:13px; font-weight:500; color:#56564F;">
-        <li style="padding:0 22px;">Capacity 250</li>
+        <li style="padding:0 22px;">Capacity <span data-content="venue.capacity">250</span></li>
         <li aria-hidden="true" style="color:#A05B45;">&middot;</li>
         <li style="padding:0 22px;">Full bar on site</li>
         <li aria-hidden="true" style="color:#A05B45;">&middot;</li>
@@ -77,7 +78,7 @@
         <li aria-hidden="true" style="color:#A05B45;">&middot;</li>
         <li style="padding:0 22px;">Downtown Huntingdon</li>
         <li aria-hidden="true" style="color:#A05B45;">&middot;</li>
-        <li style="padding:0 22px; color:#2B2B27;">Saturdays from $4,500</li>
+        <li style="padding:0 22px; color:#2B2B27;">Saturdays from <span data-content="pricing.saturday">$4,500</span></li>
       </ul>
     </div>
   </section>
@@ -92,58 +93,58 @@
         </div>
         <div>
           <h2 class="display">One room, every kind of gathering</h2>
-          <p class="lede" style="margin-top:20px; max-width:60ch;">Weddings pay the most; luncheons and reunions fill the calendar. The room, the bar, and the crew are set up for all of it.</p>
+          <p class="lede" style="margin-top:20px; max-width:60ch;" data-content="home.occasions.intro">Weddings pay the most; luncheons and reunions fill the calendar. The room, the bar, and the crew are set up for all of it.</p>
         </div>
       </div>
 
       <div class="occ-grid">
         <a class="occ" href="weddings.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/02-hall-wide.webp" type="image/webp"><img src="images/02-hall-wide.jpg" alt="The open hall with timber posts and arched windows" loading="lazy"></picture></div>
-          <div class="occ-name">Weddings</div>
-          <p class="occ-desc">Ceremony and reception in one room, with the bar open till the last dance.</p>
-          <div class="occ-tail">From $4,500 <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.weddings.image"><source srcset="images/02-hall-wide.webp" type="image/webp"><img src="images/02-hall-wide.jpg" alt="The open hall with timber posts and arched windows" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.weddings.name">Weddings</div>
+          <p class="occ-desc" data-content="home.occasions.weddings.desc">Ceremony and reception in one room, with the bar open till the last dance.</p>
+          <div class="occ-tail"><span>From <span data-content="home.occasions.weddings.price">$4,500</span></span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ" href="book-a-tour.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/10-hall-duct-windows.webp" type="image/webp"><img src="images/10-hall-duct-windows.jpg" alt="The bright hall under exposed joists and ductwork" loading="lazy"></picture></div>
-          <div class="occ-name">Celebrations of life</div>
-          <p class="occ-desc">A bright, dignified room for a luncheon after the service &mdash; we set up and clean up.</p>
-          <div class="occ-tail">From $1,000 <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.celebrations.image"><source srcset="images/10-hall-duct-windows.webp" type="image/webp"><img src="images/10-hall-duct-windows.jpg" alt="The bright hall under exposed joists and ductwork" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.celebrations.name">Celebrations of life</div>
+          <p class="occ-desc" data-content="home.occasions.celebrations.desc">A bright, dignified room for a luncheon after the service &mdash; we set up and clean up.</p>
+          <div class="occ-tail"><span>From <span data-content="home.occasions.celebrations.price">$1,000</span></span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ" href="book-a-tour.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/11-hall-posts-light.webp" type="image/webp"><img src="images/11-hall-posts-light.jpg" alt="Light pouring across the open floor between the posts" loading="lazy"></picture></div>
-          <div class="occ-name">Showers &amp; parties</div>
-          <p class="occ-desc">Bridal, baby, birthday, retirement &mdash; a half-day room that fits forty or two hundred.</p>
-          <div class="occ-tail">From $1,000 <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.showers.image"><source srcset="images/11-hall-posts-light.webp" type="image/webp"><img src="images/11-hall-posts-light.jpg" alt="Light pouring across the open floor between the posts" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.showers.name">Showers &amp; parties</div>
+          <p class="occ-desc" data-content="home.occasions.showers.desc">Bridal, baby, birthday, retirement &mdash; a half-day room that fits forty or two hundred.</p>
+          <div class="occ-tail"><span>From <span data-content="home.occasions.showers.price">$1,000</span></span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ" href="book-a-tour.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/18-bar-and-room.webp" type="image/webp"><img src="images/18-bar-and-room.jpg" alt="The bar with the open room beyond" loading="lazy"></picture></div>
-          <div class="occ-name">Graduations</div>
-          <p class="occ-desc">Open floor for a buffet and a crowd, with the arcade next door for the cousins.</p>
-          <div class="occ-tail">From $1,000 <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.graduations.image"><source srcset="images/18-bar-and-room.webp" type="image/webp"><img src="images/18-bar-and-room.jpg" alt="The bar with the open room beyond" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.graduations.name">Graduations</div>
+          <p class="occ-desc" data-content="home.occasions.graduations.desc">Open floor for a buffet and a crowd, with the arcade next door for the cousins.</p>
+          <div class="occ-tail"><span>From <span data-content="home.occasions.graduations.price">$1,000</span></span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ" href="book-a-tour.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/12-hall-charcoal-side.webp" type="image/webp"><img src="images/12-hall-charcoal-side.jpg" alt="The charcoal-painted side of the hall" loading="lazy"></picture></div>
-          <div class="occ-name">Class reunions</div>
-          <p class="occ-desc">Long tables, a full bar, and a room your class hasn&rsquo;t seen since it was a record store.</p>
-          <div class="occ-tail">From $2,000 <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.reunions.image"><source srcset="images/12-hall-charcoal-side.webp" type="image/webp"><img src="images/12-hall-charcoal-side.jpg" alt="The charcoal-painted side of the hall" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.reunions.name">Class reunions</div>
+          <p class="occ-desc" data-content="home.occasions.reunions.desc">Long tables, a full bar, and a room your class hasn&rsquo;t seen since it was a record store.</p>
+          <div class="occ-tail"><span>From <span data-content="home.occasions.reunions.price">$2,000</span></span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ" href="book-a-tour.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/17-duct-and-windows.webp" type="image/webp"><img src="images/17-duct-and-windows.jpg" alt="Ductwork running toward the arched windows" loading="lazy"></picture></div>
-          <div class="occ-name">Church &amp; civic banquets</div>
-          <p class="occ-desc">Seats 250 for a plated dinner; elevator and ADA access to the second floor.</p>
-          <div class="occ-tail">From $2,000 <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.banquets.image"><source srcset="images/17-duct-and-windows.webp" type="image/webp"><img src="images/17-duct-and-windows.jpg" alt="Ductwork running toward the arched windows" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.banquets.name">Church &amp; civic banquets</div>
+          <p class="occ-desc" data-content="home.occasions.banquets.desc">Seats 250 for a plated dinner; elevator and ADA access to the second floor.</p>
+          <div class="occ-tail"><span>From <span data-content="home.occasions.banquets.price">$2,000</span></span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ" href="book-a-tour.html">
-          <div class="arch arch--shallow" style="height:220px;"><picture><source srcset="images/16-post-and-doors.webp" type="image/webp"><img src="images/16-post-and-doors.jpg" alt="A timber post by the entry doors" loading="lazy"></picture></div>
-          <div class="occ-name">Corporate &amp; meetings</div>
-          <p class="occ-desc">Projection, wifi, and a catered lunch &mdash; booked by the hour when you need it.</p>
-          <div class="occ-tail">$150 / hr <span class="occ-go">&rarr;</span></div>
+          <div class="arch arch--shallow" style="height:220px;"><picture data-content="home.occasions.corporate.image"><source srcset="images/16-post-and-doors.webp" type="image/webp"><img src="images/16-post-and-doors.jpg" alt="A timber post by the entry doors" loading="lazy"></picture></div>
+          <div class="occ-name" data-content="home.occasions.corporate.name">Corporate &amp; meetings</div>
+          <p class="occ-desc" data-content="home.occasions.corporate.desc">Projection, wifi, and a catered lunch &mdash; booked by the hour when you need it.</p>
+          <div class="occ-tail"><span><span data-content="home.occasions.corporate.price">$150</span> / hr</span> <span class="occ-go">&rarr;</span></div>
         </a>
         <a class="occ occ--cta" href="book-a-tour.html">
           <div>
             <div class="u" style="color:#C9A97E; font-weight:500;">Not sure which fits?</div>
             <div style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1.1; margin-top:16px;">Walk the room <span style="font-style:italic;">with us</span></div>
-            <p style="color:#EFEBE2; opacity:.8; font-size:17px; margin:16px 0 0;">Twenty minutes, no pressure. We&rsquo;ll talk dates, headcount, and the bar.</p>
+            <p style="color:#EFEBE2; opacity:.8; font-size:17px; margin:16px 0 0;" data-content="home.cta.text">Twenty minutes, no pressure. We&rsquo;ll talk dates, headcount, and the bar.</p>
           </div>
           <span class="u" style="color:#EFEBE2; margin-top:32px;">Book a tour <span style="color:#A05B45;">&rarr;</span></span>
         </a>
@@ -156,31 +157,31 @@
     <div class="container grid-48">
       <div>
         <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
-        <div class="u eyebrow" style="color:#C9A97E;">Downtown, not a cornfield</div>
-        <h2 class="display" style="margin-top:20px;">The barns can&rsquo;t offer <em>the block</em></h2>
-        <p style="color:rgba(239,235,226,.72); margin:24px 0 0; max-width:38ch; font-size:17px;">Most halls in the county sit alone on a rural lot. This one shares a wall with a mini golf and arcade, sits a floor above a tavern, and stands in the middle of walkable downtown Huntingdon. They&rsquo;re their own businesses &mdash; but they&rsquo;re twenty feet away, and that changes what an evening can be.</p>
-        <div class="arch arch--slate" style="height:340px; margin-top:40px;"><picture><source srcset="images/07-charcoal-brick-wall.webp" type="image/webp"><img src="images/07-charcoal-brick-wall.jpg" alt="The charcoal-painted brick wall inside the hall" loading="lazy"></picture></div>
+        <div class="u eyebrow" style="color:#C9A97E;" data-content="home.adjacency.eyebrow">Downtown, not a cornfield</div>
+        <h2 class="display" style="margin-top:20px;" data-content="home.adjacency.headline" data-content-html>The barns can&rsquo;t offer <em>the block</em></h2>
+        <p style="color:rgba(239,235,226,.72); margin:24px 0 0; max-width:38ch; font-size:17px;" data-content="home.adjacency.intro">Most halls in the county sit alone on a rural lot. This one shares a wall with a mini golf and arcade, sits a floor above a tavern, and stands in the middle of walkable downtown Huntingdon. They&rsquo;re their own businesses &mdash; but they&rsquo;re twenty feet away, and that changes what an evening can be.</p>
+        <div class="arch arch--slate" style="height:340px; margin-top:40px;"><picture data-content="home.adjacency.image"><source srcset="images/07-charcoal-brick-wall.webp" type="image/webp"><img src="images/07-charcoal-brick-wall.jpg" alt="The charcoal-painted brick wall inside the hall" loading="lazy"></picture></div>
       </div>
       <div style="border-top:1px solid rgba(201,169,126,.35);">
         <div style="display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(201,169,126,.35);">
-          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;">Rehearsal, then mini golf</div>
-          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;">Host the rehearsal dinner upstairs, then take the wedding party next door for a round. Same building, nobody moves a car.</p>
+          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;" data-content="home.adjacency.1.name">Rehearsal, then mini golf</div>
+          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;" data-content="home.adjacency.1.text">Host the rehearsal dinner upstairs, then take the wedding party next door for a round. Same building, nobody moves a car.</p>
         </div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(201,169,126,.35);">
-          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;">A room for the kids</div>
-          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;">Book a kids&rsquo; room with the arcade next door and parents stay through the last dance instead of leaving at nine.</p>
+          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;" data-content="home.adjacency.2.name">A room for the kids</div>
+          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;" data-content="home.adjacency.2.text">Book a kids&rsquo; room with the arcade next door and parents stay through the last dance instead of leaving at nine.</p>
         </div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(201,169,126,.35);">
-          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;">A party that spills over</div>
-          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;">Graduation&rsquo;s in the hall; the cousins drift into the arcade and back. Nobody&rsquo;s bored, nobody&rsquo;s underfoot.</p>
+          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;" data-content="home.adjacency.3.name">A party that spills over</div>
+          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;" data-content="home.adjacency.3.text">Graduation&rsquo;s in the hall; the cousins drift into the arcade and back. Nobody&rsquo;s bored, nobody&rsquo;s underfoot.</p>
         </div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(201,169,126,.35);">
-          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;">Lunch with something after</div>
-          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;">A corporate lunch with an activity after &mdash; mini golf or the arcade next door &mdash; one address, no caravan to a second venue.</p>
+          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;" data-content="home.adjacency.4.name">Lunch with something after</div>
+          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;" data-content="home.adjacency.4.text">A corporate lunch with an activity after &mdash; mini golf or the arcade next door &mdash; one address, no caravan to a second venue.</p>
         </div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:baseline; padding:28px 0;">
-          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;">Dinner is a block away</div>
-          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;">Four restaurants within a block, and a tavern one floor down. Guests walk to dinner and walk back &mdash; no shuttle, no drive.</p>
+          <div class="adj-name" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.15; white-space:nowrap;" data-content="home.adjacency.5.name">Dinner is a block away</div>
+          <p style="margin:0; color:rgba(239,235,226,.82); font-size:17px; max-width:58ch;" data-content="home.adjacency.5.text">Four restaurants within a block, and a tavern one floor down. Guests walk to dinner and walk back &mdash; no shuttle, no drive.</p>
         </div>
       </div>
     </div>
@@ -192,7 +193,7 @@
   <div class="site-footer-inner">
     <div>
       <a class="wordmark" href="index.html" data-venue-name>The Loft at 708</a>
-      <p class="addr">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+      <p class="addr" data-content="contact.address">708 Washington Street, second floor &middot; Huntingdon, PA</p>
     </div>
     <nav aria-label="Footer">
       <a href="the-room.html">The room</a>

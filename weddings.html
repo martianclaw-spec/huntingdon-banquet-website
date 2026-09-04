@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/content.js" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><defs>
@@ -20,8 +21,8 @@
 
 <div class="notice-bar">
   <div class="notice-bar-inner">
-    <span class="notice-label">Opening soon</span>
-    <span>The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
+    <span class="notice-label" data-content="notice.label">Opening soon</span>
+    <span data-content="notice.text">The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
     <a href="book-a-tour.html">Book an early tour &rarr;</a>
   </div>
 </div>
@@ -45,7 +46,7 @@
     <div class="container">
       <div class="hero" style="height:78vh; min-height:580px;">
         <div class="hero-media tarch-hero-img">
-          <picture>
+          <picture data-content="weddings.hero.image">
             <source srcset="images/08-hall-windows-posts.webp" type="image/webp">
             <img src="images/08-hall-windows-posts.jpg" alt="The long wall of tall arched windows behind the timber posts" fetchpriority="high">
           </picture>
@@ -54,8 +55,8 @@
         <div class="hero-copy">
           <div style="max-width:1020px;">
             <div class="tarch-fade d1 u eyebrow" style="color:#C9A97E; margin-bottom:20px;">Weddings at <span data-venue-name>The Loft at 708</span></div>
-            <h1 class="tarch-fade d2 display">Married under <em>the tall windows</em></h1>
-            <p class="tarch-fade d3 hero-sub" style="max-width:52ch;">Exposed brick, wide-plank floors, and a full bar of our own &mdash; a room that holds 250 and still feels like it was built for your night.</p>
+            <h1 class="tarch-fade d2 display" data-content="weddings.hero.headline" data-content-html>Married under <em>the tall windows</em></h1>
+            <p class="tarch-fade d3 hero-sub" style="max-width:52ch;" data-content="weddings.hero.subheadline">Exposed brick, wide-plank floors, and a full bar of our own &mdash; a room that holds 250 and still feels like it was built for your night.</p>
           </div>
         </div>
       </div>
@@ -70,8 +71,8 @@
         <div class="u eyebrow">The night, plainly</div>
       </div>
       <div>
-        <p style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1.25; margin:0; max-width:26ch; letter-spacing:-0.01em;">Ceremony by the windows, dinner on the floor, dancing at the bar &mdash; all in one room, all one flight up.</p>
-        <p class="lede" style="margin-top:28px; max-width:60ch;">You get the whole second floor for the day: no other event stacked behind yours, no hard-out at five. We set the room, tend the bar, and break it all down after you leave. You bring a caterer and the people.</p>
+        <p style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1.25; margin:0; max-width:26ch; letter-spacing:-0.01em;" data-content="weddings.intro.statement">Ceremony by the windows, dinner on the floor, dancing at the bar &mdash; all in one room, all one flight up.</p>
+        <p class="lede" style="margin-top:28px; max-width:60ch;" data-content="weddings.intro.text">You get the whole second floor for the day: no other event stacked behind yours, no hard-out at five. We set the room, tend the bar, and break it all down after you leave. You bring a caterer and the people.</p>
       </div>
     </div>
   </section>
@@ -86,16 +87,16 @@
         </div>
         <div>
           <h2 class="display">Three ways to take the room</h2>
-          <p class="lede" style="margin-top:20px; max-width:58ch;">Every package is the whole floor for the day. What changes is how much of the weekend you want and how many people you&rsquo;re feeding.</p>
+          <p class="lede" style="margin-top:20px; max-width:58ch;" data-content="weddings.packages.intro">Every package is the whole floor for the day. What changes is how much of the weekend you want and how many people you&rsquo;re feeding.</p>
         </div>
       </div>
 
       <div class="cards-3">
         <!-- pkg 1 -->
         <div class="card">
-          <div class="display-italic">Ceremony &amp; reception</div>
-          <div class="u" style="color:#A05B45; margin-top:14px;">From $4,500 &middot; Saturdays, peak</div>
-          <p style="color:#56564F; margin:16px 0 24px; font-size:17px;">The full day. Vows by the windows, flip to dinner, dance till last call. Up to 250.</p>
+          <div class="display-italic" data-content="weddings.packages.full.title">Ceremony &amp; reception</div>
+          <div class="u" style="color:#A05B45; margin-top:14px;">From <span data-content="pricing.saturday">$4,500</span> &middot; Saturdays, peak</div>
+          <p style="color:#56564F; margin:16px 0 24px; font-size:17px;" data-content="weddings.packages.full.desc">The full day. Vows by the windows, flip to dinner, dance till last call. Up to 250.</p>
           <div class="u" style="color:#2B2B27; margin-bottom:12px;">Included</div>
           <ul style="margin-bottom:24px;">
             <li>Full floor, 10am&ndash;midnight</li>
@@ -114,9 +115,9 @@
 
         <!-- pkg 2 (featured charcoal) -->
         <div class="card card--dark">
-          <div class="display-italic">Reception only</div>
-          <div class="u" style="color:#C9A97E; margin-top:14px;">From $3,200 &middot; Fri or Sun</div>
-          <p style="color:rgba(239,235,226,.8); margin:16px 0 24px; font-size:17px;">Married elsewhere, celebrating here. Doors at four, dinner and dancing till midnight.</p>
+          <div class="display-italic" data-content="weddings.packages.reception.title">Reception only</div>
+          <div class="u" style="color:#C9A97E; margin-top:14px;">From <span data-content="pricing.frisun">$3,200</span> &middot; Fri or Sun</div>
+          <p style="color:rgba(239,235,226,.8); margin:16px 0 24px; font-size:17px;" data-content="weddings.packages.reception.desc">Married elsewhere, celebrating here. Doors at four, dinner and dancing till midnight.</p>
           <div class="u" style="color:#EFEBE2; margin-bottom:12px;">Included</div>
           <ul style="margin-bottom:24px;">
             <li>Full floor, 2pm&ndash;midnight</li>
@@ -135,9 +136,9 @@
 
         <!-- pkg 3 -->
         <div class="card">
-          <div class="display-italic">The small wedding</div>
-          <div class="u" style="color:#A05B45; margin-top:14px;">From $2,000 &middot; weekdays</div>
-          <p style="color:#56564F; margin:16px 0 24px; font-size:17px;">Forty of your people, one long table under the windows, home by ten. Off-peak, unhurried.</p>
+          <div class="display-italic" data-content="weddings.packages.small.title">The small wedding</div>
+          <div class="u" style="color:#A05B45; margin-top:14px;">From <span data-content="pricing.weekday">$2,000</span> &middot; weekdays</div>
+          <p style="color:#56564F; margin:16px 0 24px; font-size:17px;" data-content="weddings.packages.small.desc">Forty of your people, one long table under the windows, home by ten. Off-peak, unhurried.</p>
           <div class="u" style="color:#2B2B27; margin-bottom:12px;">Included</div>
           <ul style="margin-bottom:24px;">
             <li>Full floor, 6-hour block</li>
@@ -160,8 +161,8 @@
   <!-- IMAGE BAND -->
   <section class="gutter sect">
     <div class="container band-2">
-      <div class="arch" style="height:460px;"><picture><source srcset="images/03-bar-straight-on.webp" type="image/webp"><img src="images/03-bar-straight-on.jpg" alt="The reclaimed-brick bar under its canopy" loading="lazy"></picture></div>
-      <div class="arch" style="height:460px;"><picture><source srcset="images/09-bar-toward-windows.webp" type="image/webp"><img src="images/09-bar-toward-windows.jpg" alt="From the bar toward the arched windows" loading="lazy"></picture></div>
+      <div class="arch" style="height:460px;"><picture data-content="weddings.gallery.1"><source srcset="images/03-bar-straight-on.webp" type="image/webp"><img src="images/03-bar-straight-on.jpg" alt="The reclaimed-brick bar under its canopy" loading="lazy"></picture></div>
+      <div class="arch" style="height:460px;"><picture data-content="weddings.gallery.2"><source srcset="images/09-bar-toward-windows.webp" type="image/webp"><img src="images/09-bar-toward-windows.jpg" alt="From the bar toward the arched windows" loading="lazy"></picture></div>
     </div>
   </section>
 
@@ -171,13 +172,13 @@
       <div>
         <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
         <h2 style="font-family:'Canela','Newsreader',serif; font-weight:400; font-size:34px; line-height:1.1; margin:0;">Rates</h2>
-        <p class="lede" style="margin-top:16px; max-width:34ch;">Starting points, published. The number moves with guest count, bar service, and the day of the week.</p>
+        <p class="lede" style="margin-top:16px; max-width:34ch;" data-content="weddings.rates.intro">Starting points, published. The number moves with guest count, bar service, and the day of the week.</p>
       </div>
       <div class="rows">
-        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600;">Saturday, peak season &middot; May&ndash;Oct</span><span style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1;">$4,500</span></div>
-        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600;">Friday or Sunday</span><span style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1;">$3,200</span></div>
-        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600;">Weekday, full day</span><span style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1;">$2,000</span></div>
-        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600; color:#A05B45;">January&ndash;April</span><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:34px; line-height:1; color:#A05B45;">20% off</span></div>
+        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600;" data-content="pricing.saturday_label">Saturday, peak season &middot; May&ndash;Oct</span><span style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1;" data-content="pricing.saturday">$4,500</span></div>
+        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600;" data-content="pricing.frisun_label">Friday or Sunday</span><span style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1;" data-content="pricing.frisun">$3,200</span></div>
+        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600;" data-content="pricing.weekday_label">Weekday, full day</span><span style="font-family:'Canela','Newsreader',serif; font-size:34px; line-height:1;" data-content="pricing.weekday">$2,000</span></div>
+        <div class="rate-row" style="padding:20px 0;"><span class="u eyebrow" style="font-weight:600; color:#A05B45;" data-content="pricing.offseason_label">January&ndash;April</span><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:34px; line-height:1; color:#A05B45;" data-content="pricing.offseason_discount">20% off</span></div>
       </div>
     </div>
   </section>
@@ -190,14 +191,14 @@
         <div class="u eyebrow">Every rate includes</div>
       </div>
       <div class="cols-2" style="border-top:1px solid #C9A97E;">
-        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;">The whole second floor for your day</div>
-        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;">Tables, chairs, floor-length linens</div>
-        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;">Setup and teardown by our crew</div>
-        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;">An event attendant on site all night</div>
-        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;">Full bar, licensed and staffed by us</div>
-        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;">House sound system and projection</div>
-        <div style="padding:16px 0;">Elevator and ADA access, wifi</div>
-        <div style="padding:16px 0; color:#56564F;">Not included: catering, cake, florals, insurance</div>
+        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;" data-content="weddings.includes.1">The whole second floor for your day</div>
+        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;" data-content="weddings.includes.2">Tables, chairs, floor-length linens</div>
+        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;" data-content="weddings.includes.3">Setup and teardown by our crew</div>
+        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;" data-content="weddings.includes.4">An event attendant on site all night</div>
+        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;" data-content="weddings.includes.5">Full bar, licensed and staffed by us</div>
+        <div style="padding:16px 0; border-bottom:1px solid #C9A97E;" data-content="weddings.includes.6">House sound system and projection</div>
+        <div style="padding:16px 0;" data-content="weddings.includes.7">Elevator and ADA access, wifi</div>
+        <div style="padding:16px 0; color:#56564F;" data-content="weddings.includes.not">Not included: catering, cake, florals, insurance</div>
       </div>
     </div>
   </section>
@@ -208,10 +209,10 @@
       <div class="container grid-84" style="align-items:center;">
         <div>
           <div class="u eyebrow" style="color:#C9A97E;">The night before</div>
-          <h2 class="display" style="margin-top:20px;">Rehearsal dinner upstairs, <em>mini golf next door</em></h2>
-          <p style="color:rgba(239,235,226,.8); margin:24px 0 0; max-width:56ch; font-size:17px;">Book the hall for the rehearsal dinner, then walk the wedding party through the wall for a round of mini golf. Same building, nobody drives, and the cousins have somewhere to be. The arcade is its own business with its own bookings &mdash; we&rsquo;ll point you to them when you reserve your date.</p>
+          <h2 class="display" style="margin-top:20px;" data-content="weddings.rehearsal.headline" data-content-html>Rehearsal dinner upstairs, <em>mini golf next door</em></h2>
+          <p style="color:rgba(239,235,226,.8); margin:24px 0 0; max-width:56ch; font-size:17px;" data-content="weddings.rehearsal.text">Book the hall for the rehearsal dinner, then walk the wedding party through the wall for a round of mini golf. Same building, nobody drives, and the cousins have somewhere to be. The arcade is its own business with its own bookings &mdash; we&rsquo;ll point you to them when you reserve your date.</p>
         </div>
-        <div class="arch arch--slate" style="height:420px;"><picture><source srcset="images/05-timber-post-detail.webp" type="image/webp"><img src="images/05-timber-post-detail.jpg" alt="A timber post with the room receding behind it" loading="lazy"></picture></div>
+        <div class="arch arch--slate" style="height:420px;"><picture data-content="weddings.rehearsal.image"><source srcset="images/05-timber-post-detail.webp" type="image/webp"><img src="images/05-timber-post-detail.jpg" alt="A timber post with the room receding behind it" loading="lazy"></picture></div>
       </div>
     </div>
   </section>
@@ -222,15 +223,15 @@
       <div>
         <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
         <h2 style="font-family:'Canela','Newsreader',serif; font-weight:400; font-size:34px; line-height:1.1; margin:0;">Preferred vendors</h2>
-        <p class="lede" style="margin-top:16px; max-width:34ch;">Caterers who know the load-in and crews who&rsquo;ve worked the room. Not required &mdash; just a head start.</p>
+        <p class="lede" style="margin-top:16px; max-width:34ch;" data-content="weddings.vendors.intro">Caterers who know the load-in and crews who&rsquo;ve worked the room. Not required &mdash; just a head start.</p>
       </div>
       <div class="cols-2" style="border-top:1px solid #C9A97E;">
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Catering</span><span class="u">List on request</span></div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Cake &amp; sweets</span><span class="u">List on request</span></div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Florals</span><span class="u">List on request</span></div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Photography</span><span class="u">List on request</span></div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Music &amp; DJs</span><span class="u">List on request</span></div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Officiants</span><span class="u">List on request</span></div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Catering</span><span class="u" data-content="weddings.vendors.catering">List on request</span></div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Cake &amp; sweets</span><span class="u" data-content="weddings.vendors.cake">List on request</span></div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Florals</span><span class="u" data-content="weddings.vendors.florals">List on request</span></div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Photography</span><span class="u" data-content="weddings.vendors.photography">List on request</span></div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Music &amp; DJs</span><span class="u" data-content="weddings.vendors.music">List on request</span></div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid #C9A97E;"><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px;">Officiants</span><span class="u" data-content="weddings.vendors.officiants">List on request</span></div>
       </div>
     </div>
   </section>
@@ -238,8 +239,8 @@
   <!-- CLOSING -->
   <section class="gutter sect" style="padding-bottom:120px;">
     <div class="container">
-      <div class="arch" style="height:520px;"><picture><source srcset="images/06-ceiling-joists.webp" type="image/webp"><img src="images/06-ceiling-joists.jpg" alt="Ceiling detail — original joists and spiral ductwork" loading="lazy"></picture></div>
-      <p style="font-family:'Canela','Newsreader',serif; font-size:52px; line-height:1.15; margin:64px auto 0; max-width:20ch; text-align:center; letter-spacing:-0.01em;">A factory, a hardware store, a furniture store, a record store. <span style="font-style:italic;">Yours is the fifth thing this room has been.</span></p>
+      <div class="arch" style="height:520px;"><picture data-content="weddings.closing.image"><source srcset="images/06-ceiling-joists.webp" type="image/webp"><img src="images/06-ceiling-joists.jpg" alt="Ceiling detail — original joists and spiral ductwork" loading="lazy"></picture></div>
+      <p style="font-family:'Canela','Newsreader',serif; font-size:52px; line-height:1.15; margin:64px auto 0; max-width:20ch; text-align:center; letter-spacing:-0.01em;" data-content="weddings.closing" data-content-html>A factory, a hardware store, a furniture store, a record store. <span style="font-style:italic;">Yours is the fifth thing this room has been.</span></p>
     </div>
   </section>
 
@@ -249,7 +250,7 @@
   <div class="site-footer-inner">
     <div>
       <a class="wordmark" href="index.html" data-venue-name>The Loft at 708</a>
-      <p class="addr">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+      <p class="addr" data-content="contact.address">708 Washington Street, second floor &middot; Huntingdon, PA</p>
     </div>
     <nav aria-label="Footer">
       <a href="the-room.html">The room</a>
