@@ -158,7 +158,25 @@ generous for prose and tight for single-line labels.
   flex-container trap above; the byte check alone would not have.
 - No build exists to run. `node --check` passes on the two new scripts.
 
-## Notes for phase 2 (do not build now)
+## Phase 2 wiring (2026-09-05)
+
+The control plane exists: repo `martianclaw-spec/diy-customer`, app
+`diy-customer.vercel.app`, its own Supabase project. On this side three
+things changed, none of them rendering:
+
+- `config.js` gained `contentUrl`, the read endpoint for this site.
+- `js/content.js` now fetches that URL (4-second timeout, CORS, no
+  credentials) instead of resolving an empty map. Any failure still resolves
+  to `{}`.
+- `scripts/check-content.js --fallbacks` prints every slot's built-in value
+  as JSON; the control plane seeds those so the assistant can say what the
+  site shows today. Re-run the seed after any copy change that touches a
+  slot's fallback.
+
+The identity check (`--baseline 4c0667d`) still passes: the HTML is
+untouched.
+
+## Notes for phase 2 (written before it was built)
 
 - The control plane returns `Record<string, string>`; `js/content.js`
   already applies it. Money and number values are display strings; no

@@ -3,6 +3,10 @@
 //
 //   node scripts/check-content.js                  drift check (run before every commit)
 //   node scripts/check-content.js --list           print every slot with where it is used
+//   node scripts/check-content.js --fallbacks      print JSON of every slot's built-in value
+//                                                  (the text, markup, or image path the site
+//                                                  shows when nothing overrides it), for the
+//                                                  control plane's seed
 //   node scripts/check-content.js --baseline REF   also prove the pages are byte-identical
 //                                                  to git REF once the overlay markers are
 //                                                  stripped (phase-1 acceptance test)
@@ -30,6 +34,33 @@ var ID_RE = /^[a-z][a-z0-9_]*(\.[a-z0-9_]+)+$/;
 
 var args = process.argv.slice(2);
 var listMode = args.indexOf('--list') !== -1;
+var fallbackMode = args.indexOf('--fallbacks') !== -1;
+
+var ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', mdash: '—', ndash: '–', middot: '·', prime: '′', times: '×', eacute: 'é', hellip: '…', rarr: '→', larr: '←' };
+function decodeEntities(s) {
+  return s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, function (m, e) {
+    if (e[0] === '#') return String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10));
+    return Object.prototype.hasOwnProperty.call(ENTITIES, e) ? ENTITIES[e] : m;
+  });
+}
+// The built-in value of a slot: image path for <picture>/<img>, inner markup
+// for richtext, decoded plain text otherwise. Slots never nest their own tag.
+function fallbackOf(html, tag, openEnd, isHtml) {
+  if (tag === 'img') {
+    var im = /\ssrc="([^"]*)"/.exec(html.slice(html.lastIndexOf('<', openEnd), openEnd + 1));
+    return im ? im[1] : null;
+  }
+  var close = html.indexOf('</' + tag + '>', openEnd);
+  if (close === -1) return null;
+  var inner = html.slice(openEnd + 1, close);
+  if (tag === 'picture') {
+    var src = /<img\b[^>]*\ssrc="([^"]*)"/.exec(inner);
+    return src ? src[1] : null;
+  }
+  if (isHtml) return inner.trim();
+  return decodeEntities(inner.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+}
+var fallbacks = {};
 var baselineIdx = args.indexOf('--baseline');
 var baseline = baselineIdx !== -1 ? args[baselineIdx + 1] : null;
 
@@ -74,6 +105,7 @@ pages.forEach(function (file) {
     var def = byId[id];
     if (!def) { fail(loc + ': data-content="' + id + '" is not in content.config.js'); continue; }
     (uses[id] = uses[id] || []).push(loc);
+    if (!(id in fallbacks)) fallbacks[id] = fallbackOf(html, tag, m.index + m[0].length - 1, hasHtml);
     var isImgTag = tag === 'picture' || tag === 'img';
     if (def.type === 'image' && !isImgTag) fail(loc + ': image slot "' + id + '" must be on <picture> or <img>, found <' + tag + '>');
     if (def.type !== 'image' && isImgTag) fail(loc + ': "' + id + '" is type ' + def.type + ' but sits on <' + tag + '>');
@@ -126,6 +158,11 @@ if (baseline) {
 }
 
 // ---- 4. report ----------------------------------------------------------------
+
+if (fallbackMode) {
+  process.stdout.write(JSON.stringify(fallbacks, null, 2) + '\n');
+  process.exit(errors.length ? 1 : 0);
+}
 
 if (listMode) {
   var groups = {};

@@ -5,4 +5,7 @@ window.VENUE = {
   shortName: 'The Loft at 708',
   address: '708 Washington Street, second floor',
   city: 'Huntingdon, PA',
+  // Where js/content.js fetches owner-made content changes from. Empty or
+  // unreachable means the site shows its built-in copy.
+  contentUrl: 'https://diy-customer.vercel.app/api/content/loft',
 };

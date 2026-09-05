@@ -10,9 +10,10 @@
 //   element with data-content-html -> richtext: sanitized (em/strong/i/b/br only)
 //   anything else                -> plain text
 //
-// Phase 1 has no data source: the map is always empty, so this script never
-// writes to the page. A content failure must never be a page failure, so
-// every path swallows its errors.
+// The map comes from the control plane (see getContentMap). When it is
+// empty, unreachable, or slow, this script writes nothing to the page. A
+// content failure must never be a page failure, so every path swallows its
+// errors.
 //
 // The allowlist of ids lives in content.config.js at the project root; this
 // file does not load it. scripts/check-content.js keeps the two in sync.
@@ -26,15 +27,30 @@
   var pending = null;
 
   // Called once per page load; every caller shares the same promise.
+  //
+  // Phase 2: the control plane's read endpoint, from window.VENUE.contentUrl
+  // in config.js. It answers with only the overrides, as { "slot.id": value }.
+  // No URL, a slow answer, a bad status, or malformed JSON all resolve to {},
+  // and the site keeps its built-in copy.
+  var FETCH_TIMEOUT_MS = 4000;
+
   function getContentMap() {
     if (pending) return pending;
+    var url = window.VENUE && window.VENUE.contentUrl;
     pending = Promise.resolve()
       .then(function () {
-        // Phase 1: no data source yet.
-        return {};
+        if (!url || typeof fetch !== 'function') return {};
+        var controller = typeof AbortController === 'function' ? new AbortController() : null;
+        var timer = controller ? setTimeout(function () { controller.abort(); }, FETCH_TIMEOUT_MS) : null;
+        return fetch(url, { method: 'GET', mode: 'cors', credentials: 'omit', cache: 'no-store', signal: controller ? controller.signal : undefined })
+          .then(function (res) {
+            if (!res.ok) return {};
+            return res.json();
+          })
+          .finally(function () { if (timer) clearTimeout(timer); });
       })
       .then(function (map) {
-        return map && typeof map === 'object' ? map : {};
+        return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
       })
       .catch(function () {
         return {};
