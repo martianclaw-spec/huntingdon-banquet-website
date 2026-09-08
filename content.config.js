@@ -42,9 +42,9 @@ var CONTENT_SLOTS = [
   // ---- Contact ---------------------------------------------------------------
 
   { id: 'contact.address', label: 'Address in the footer', group: 'Contact', type: 'text', maxLength: 60,
-    help: 'One line under the name at the bottom of every page. The venue name itself comes from config.js.' },
+    help: 'One line under the name at the bottom of every page.' },
   { id: 'venue.capacity', label: 'Guest capacity', group: 'Contact', type: 'number', maxLength: 4,
-    help: 'The number used on the homepage strip ("Capacity 250") and the room specs ("Up to 250 guests"). Sentences elsewhere that mention 250 are edited on their own.' },
+    help: 'The number on the homepage strip ("Capacity 250") and in the room specs ("Up to 250 guests"). Sentences elsewhere that mention 250 are changed on their own.' },
 
   // ---- Homepage --------------------------------------------------------------
 
