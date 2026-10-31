@@ -16,9 +16,10 @@ window.VENUE = {
   phone: '(814) 386-2991',
 
   // Where the "Plan your event" form sends inquiries (a URL that accepts a
-  // JSON POST). Empty: the form falls back to opening an email to `email`,
-  // and with no email either it says plainly that it is not connected yet.
-  inquiryUrl: '',
+  // JSON POST). The endpoint saves each one and emails it to Michele with
+  // Reply-To set to the guest. If it fails, the form offers an email link to
+  // `email` instead. Empty: the form opens an email to `email` directly.
+  inquiryUrl: 'https://diy-customer.vercel.app/api/inquiry/loft',
 
   // Where js/content.js fetches owner-made content changes from. Empty or
   // unreachable means the site shows its built-in copy.

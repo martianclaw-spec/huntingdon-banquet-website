@@ -132,8 +132,10 @@
           showDone(data);
         })
         .catch(function () {
-          showStatus('Something went wrong sending your note. Please try again in a moment' +
-            (V.email ? ', or email us at <a href="mailto:' + V.email + '">' + V.email + '</a>.' : '.'));
+          // The guest's details are already written into the email link, so
+          // nothing they typed is lost.
+          showStatus('Something went wrong sending your note.' +
+            (V.email ? ' <a href="' + asEmail(data) + '">Send it by email instead</a>, with everything you wrote already filled in.' : ' Please try again in a moment.'));
         })
         .finally(function () {
           submitBtn.disabled = false;

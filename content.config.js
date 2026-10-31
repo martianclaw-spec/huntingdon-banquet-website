@@ -342,6 +342,24 @@ var CONTENT_SLOTS = [
   { id: 'inquire.hero.image', label: 'Plan your event main photo', group: 'Photos', type: 'image' },
 ];
 
+// Lists Michele can add rows to. Everything in a list is public, because the
+// site reads it from the same open feed as the slots.
+var CONTENT_COLLECTIONS = [
+  {
+    id: 'calendar.booked',
+    label: 'Booked dates',
+    group: 'Availability',
+    itemLabel: 'booked date',
+    maxItems: 500,
+    fields: [
+      { name: 'date', label: 'Date', type: 'text', maxLength: 40, required: true,
+        help: 'The day that is taken, written like 2027-06-12 or June 12, 2027. It shows as booked on the availability calendar.' },
+      { name: 'status', label: 'Booked or on hold', type: 'text', maxLength: 20,
+        help: 'Leave empty or write "booked" for a confirmed date. Write "hold" for a date someone is deciding on; it shows as on hold.' },
+    ],
+  },
+];
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { CONTENT_SLOTS: CONTENT_SLOTS };
+  module.exports = { CONTENT_SLOTS: CONTENT_SLOTS, CONTENT_COLLECTIONS: CONTENT_COLLECTIONS };
 }

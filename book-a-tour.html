@@ -26,6 +26,7 @@
 <script src="js/interactive.js" defer></script>
 <script src="js/content.js" defer></script>
 <script src="js/inquire.js" defer></script>
+<script src="js/availability.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -78,7 +79,32 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--linen" id="availability">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Availability</span>
+          <h2 class="h2">Check <em>a date</em></h2>
+        </div>
+        <p class="lede">Booked dates are marked. Tap an open date and it goes straight into the form below.</p>
+      </div>
+      <div class="avail reveal d1" data-availability>
+        <div class="avail__bar">
+          <button class="avail__nav" type="button" data-avail-prev aria-label="Earlier months"><span aria-hidden="true">&lsaquo;</span></button>
+          <p class="avail__status" data-avail-status aria-live="polite"></p>
+          <button class="avail__nav" type="button" data-avail-next aria-label="Later months"><span aria-hidden="true">&rsaquo;</span></button>
+        </div>
+        <div class="avail__months" data-avail-months></div>
+        <ul class="avail__key" aria-label="Key">
+          <li><span class="key key--open"></span>Open</li>
+          <li><span class="key key--hold"></span>On hold</li>
+          <li><span class="key key--booked"></span>Booked</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inquire">
     <div class="wrap inquiry">
 
       <div>
