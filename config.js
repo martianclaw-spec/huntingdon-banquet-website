@@ -7,7 +7,7 @@ window.VENUE = {
   address: '708 Washington Street, second floor',
   city: 'Huntingdon, PA',
 
-  // Michelle's public contact details. Empty means the matching link or line
+  // Michele's public contact details (the Loft's, not her realtor office). Empty means the matching link or line
   // stays hidden.
   facebookUrl: '',
   email: '',

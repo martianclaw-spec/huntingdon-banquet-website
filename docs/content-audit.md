@@ -191,7 +191,7 @@ untouched.
 
 ## Redesign, 2026-10-30
 
-The whole site was redesigned around the sign on Michelle's door (black
+The whole site was redesigned around the sign on Michele's door (black
 plaque, gold roman capitals, hairline rules) and the finished-room photos.
 The overlay contract did not change: same `js/content.js`, same
 `data-content` markers, same checker.
