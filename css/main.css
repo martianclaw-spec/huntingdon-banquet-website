@@ -904,6 +904,8 @@ a.occasion { text-decoration: none; cursor: pointer; }
 .card--ink .card__kicker { color: var(--gold); }
 .card__title { font-family: var(--serif); font-style: italic; font-size: clamp(28px, 2.6vw, 34px); line-height: 1.1; margin: 12px 0 0; }
 .card__price { font-family: var(--serif); font-size: clamp(44px, 4vw, 56px); line-height: 1; margin: 18px 0 0; }
+.card__price--quote { font-size: clamp(24px, 2.2vw, 30px); font-style: italic; color: var(--gold-text); }
+.card--ink .card__price--quote { color: var(--gold-light); }
 .card__text { color: var(--muted); margin: 16px 0 26px; font-size: 16.5px; }
 .card--ink .card__text { color: var(--on-ink-muted); }
 .card__list-title { font-size: 12px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; margin: 0 0 12px; color: var(--text); }
