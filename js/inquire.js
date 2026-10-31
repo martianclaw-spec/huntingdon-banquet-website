@@ -6,7 +6,8 @@
 //   3. neither:    the form says plainly that online inquiries are not
 //                  connected yet, so nobody thinks a message was sent when it
 //                  was not.
-// A filled-in hidden field (company_website) marks a bot; it is dropped quietly.
+// A filled-in hidden field (hp_9q2) marks a bot; it is dropped quietly. Its name
+// avoids words like "company" or "website" that browser autofill would fill.
 (function () {
   'use strict';
 
@@ -70,7 +71,7 @@
       contactBy: form.elements.contactBy.value,
       tour: form.elements.tour.checked,
       message: form.elements.message.value.trim(),
-      company_website: form.elements.company_website.value,
+      company_website: form.elements.hp_9q2.value,
       venue: V.name || '',
       page: location.href,
     };
