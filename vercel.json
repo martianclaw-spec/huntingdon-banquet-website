@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.loftat708.com" }],
+      "destination": "https://loftat708.com/$1",
+      "permanent": true
+    }
+  ]
+}
