@@ -2,8 +2,20 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.theloftat708.com" }],
+      "destination": "https://theloftat708.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "loftat708.com" }],
+      "destination": "https://theloftat708.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.loftat708.com" }],
-      "destination": "https://loftat708.com/$1",
+      "destination": "https://theloftat708.com/$1",
       "permanent": true
     }
   ]
