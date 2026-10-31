@@ -17,10 +17,11 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/interactive.js" defer></script>
 <script src="js/content.js" defer></script>
 </head>
 <body>
@@ -28,19 +29,23 @@
 
 <header class="site-header">
   <div class="site-header__inner">
+    <nav class="site-nav site-nav--left" aria-label="Main">
+      <a href="the-room.html">The Space</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html" aria-current="page">Rates</a>
+    </nav>
     <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
       <span class="lockup__the" aria-hidden="true">The</span>
       <span class="lockup__loft" aria-hidden="true">Loft</span>
       <span class="lockup__num" aria-hidden="true">@708</span>
     </a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="the-room.html">The Space</a>
-      <a href="weddings.html">Weddings</a>
-      <a href="pricing.html" aria-current="page">Rates</a>
-      <a href="for-your-guests.html">Guests</a>
-      <a class="btn" href="book-a-tour.html">Plan your event</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    <div class="site-header__tools">
+      <nav class="site-nav site-nav--right" aria-label="Plan">
+        <a href="for-your-guests.html">Guests</a>
+        <a class="btn" href="book-a-tour.html">Plan your event</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
   </div>
 </header>
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
@@ -88,7 +93,51 @@
     </div>
   </section>
 
-  <section class="section section--linen" id="bar">
+  <section class="section section--linen" id="estimate">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Quick estimate</span>
+          <h2 class="h2">Find your <em>starting rate</em></h2>
+        </div>
+        <p class="lede">Pick a day and a season to see where your room rate starts. Your final quote comes from us, with your date and headcount.</p>
+      </div>
+      <form class="estimator reveal d1" data-estimator onsubmit="return false" style="margin-top:48px">
+        <div class="estimator__form">
+          <fieldset class="choice-group">
+            <legend>Day</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="est-day" value="saturday" checked><span>Saturday</span></label>
+              <label class="chip"><input type="radio" name="est-day" value="frisun"><span>Friday or Sunday</span></label>
+              <label class="chip"><input type="radio" name="est-day" value="weekday"><span>Weekday</span></label>
+              <label class="chip"><input type="radio" name="est-day" value="halfday"><span>Half day</span></label>
+              <label class="chip"><input type="radio" name="est-day" value="hourly"><span>By the hour</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-group">
+            <legend>Season</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="est-season" value="peak" checked><span>May to December</span></label>
+              <label class="chip"><input type="radio" name="est-season" value="off"><span>January to April</span></label>
+            </div>
+          </fieldset>
+          <div class="choice-group" data-est-hours hidden>
+            <label class="field label" for="est-hours" style="display:block; font-size:12px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px">How long: <span data-est-hours-out>4 hours</span></label>
+            <input class="range" id="est-hours" type="range" min="3" max="12" step="1" value="4">
+            <div class="range-scale"><span>3</span><span>12</span></div>
+          </div>
+        </div>
+        <div class="estimator__result" aria-live="polite">
+          <span class="estimator__label">Room rate from</span>
+          <div class="estimator__value" data-est-value>$4,500</div>
+          <p class="estimator__sub" data-est-sub></p>
+          <a class="btn" href="book-a-tour.html">Get a real quote</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="bar">
     <div class="wrap">
       <div class="section-head reveal">
         <div>
@@ -221,7 +270,7 @@
   </section>
 
   <section class="cta">
-    <div class="cta__media">
+    <div class="cta__media" data-parallax>
       <picture>
         <source type="image/webp" srcset="images/loft-hall-wide-1200.webp">
         <img src="images/loft-hall-wide-1200.jpg" alt="" loading="lazy">

@@ -17,10 +17,11 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/interactive.js" defer></script>
 <script src="js/content.js" defer></script>
 </head>
 <body>
@@ -28,19 +29,23 @@
 
 <header class="site-header">
   <div class="site-header__inner">
+    <nav class="site-nav site-nav--left" aria-label="Main">
+      <a href="the-room.html">The Space</a>
+      <a href="weddings.html" aria-current="page">Weddings</a>
+      <a href="pricing.html">Rates</a>
+    </nav>
     <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
       <span class="lockup__the" aria-hidden="true">The</span>
       <span class="lockup__loft" aria-hidden="true">Loft</span>
       <span class="lockup__num" aria-hidden="true">@708</span>
     </a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="the-room.html">The Space</a>
-      <a href="weddings.html" aria-current="page">Weddings</a>
-      <a href="pricing.html">Rates</a>
-      <a href="for-your-guests.html">Guests</a>
-      <a class="btn" href="book-a-tour.html">Plan your event</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    <div class="site-header__tools">
+      <nav class="site-nav site-nav--right" aria-label="Plan">
+        <a href="for-your-guests.html">Guests</a>
+        <a class="btn" href="book-a-tour.html">Plan your event</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
   </div>
 </header>
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
@@ -169,17 +174,17 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="duo">
-        <div class="arch arch--framed reveal">
+      <div class="pair">
+        <div class="frame pair__a img-reveal">
           <picture data-content="weddings.gallery.1">
-            <source type="image/webp" srcset="images/loft-bar-view-760.webp 760w, images/loft-bar-view-1200.webp 1200w" sizes="(max-width: 560px) 90vw, 460px">
-            <img src="images/loft-bar-view-1200.jpg" srcset="images/loft-bar-view-760.jpg 760w, images/loft-bar-view-1200.jpg 1200w" sizes="(max-width: 560px) 90vw, 460px" alt="The bar under its timber canopy" loading="lazy">
+            <source type="image/webp" srcset="images/loft-bar-view-760.webp 760w, images/loft-bar-view-1200.webp 1200w" sizes="(max-width: 900px) 75vw, 640px">
+            <img src="images/loft-bar-view-1200.jpg" srcset="images/loft-bar-view-760.jpg 760w, images/loft-bar-view-1200.jpg 1200w" sizes="(max-width: 900px) 75vw, 640px" alt="The bar under its timber canopy" loading="lazy">
           </picture>
         </div>
-        <div class="arch arch--framed reveal d1">
+        <div class="frame pair__b img-reveal">
           <picture data-content="weddings.gallery.2">
-            <source type="image/webp" srcset="images/loft-farm-table-760.webp 760w, images/loft-farm-table-1200.webp 1200w" sizes="(max-width: 560px) 90vw, 460px">
-            <img src="images/loft-farm-table-1200.jpg" srcset="images/loft-farm-table-760.jpg 760w, images/loft-farm-table-1200.jpg 1200w" sizes="(max-width: 560px) 90vw, 460px" alt="Farm tables and round tables set under the arched windows" loading="lazy">
+            <source type="image/webp" srcset="images/loft-farm-table-760.webp 760w, images/loft-farm-table-1200.webp 1200w" sizes="(max-width: 900px) 60vw, 380px">
+            <img src="images/loft-farm-table-1200.jpg" srcset="images/loft-farm-table-760.jpg 760w, images/loft-farm-table-1200.jpg 1200w" sizes="(max-width: 900px) 60vw, 380px" alt="Farm tables and round tables set under the windows" loading="lazy">
           </picture>
         </div>
       </div>
@@ -289,21 +294,17 @@
     </div>
   </section>
 
-  <section class="section section--ink">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">The night before</span>
-        <h2 class="h2" data-content="weddings.rehearsal.headline" data-content-html>Rehearsal dinner upstairs, <em>mini golf next door</em></h2>
-        <p class="lede" data-content="weddings.rehearsal.text">Host the rehearsal dinner in the hall, then walk the wedding party next door for a round of mini golf. Same building, nobody drives, and the cousins have somewhere to be. The arcade is its own business with its own bookings, and we are happy to point you to them.</p>
-      </div>
-      <div class="feature-media reveal d1">
-        <div class="arch arch--framed">
-          <picture data-content="weddings.rehearsal.image">
-            <source type="image/webp" srcset="images/loft-tables-posts-760.webp 760w, images/loft-tables-posts-1200.webp 1200w" sizes="(max-width: 900px) 80vw, 520px">
-            <img src="images/loft-tables-posts-1200.jpg" srcset="images/loft-tables-posts-760.jpg 760w, images/loft-tables-posts-1200.jpg 1200w" sizes="(max-width: 900px) 80vw, 520px" alt="Tables set between the timber posts" loading="lazy">
-          </picture>
-        </div>
-      </div>
+  <section class="bleed bleed--ink bleed--flip">
+    <div class="bleed__media img-reveal">
+      <picture data-content="weddings.rehearsal.image">
+        <source type="image/webp" srcset="images/loft-tables-posts-760.webp 760w, images/loft-tables-posts-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw">
+        <img src="images/loft-tables-posts-1200.jpg" srcset="images/loft-tables-posts-760.jpg 760w, images/loft-tables-posts-1200.jpg 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="Tables set between the timber posts" loading="lazy">
+      </picture>
+    </div>
+    <div class="bleed__body reveal">
+      <span class="eyebrow">The night before</span>
+      <h2 class="h2" data-content="weddings.rehearsal.headline" data-content-html>Rehearsal dinner upstairs, <em>mini golf next door</em></h2>
+      <p class="lede" data-content="weddings.rehearsal.text">Host the rehearsal dinner in the hall, then walk the wedding party next door for a round of mini golf. Same building, nobody drives, and the cousins have somewhere to be. The arcade is its own business with its own bookings, and we are happy to point you to them.</p>
     </div>
   </section>
 
@@ -329,7 +330,7 @@
 
   <section class="section section--tight" style="padding-top:0">
     <div class="wrap">
-      <div class="frame wide-photo reveal">
+      <div class="frame wide-photo img-reveal">
         <picture data-content="weddings.closing.image">
           <source type="image/webp" srcset="images/loft-sunlit-hall-1200.webp 1200w, images/loft-sunlit-hall-2000.webp 2000w" sizes="(max-width: 1200px) 100vw, 1200px">
           <img src="images/loft-sunlit-hall-2000.jpg" srcset="images/loft-sunlit-hall-1200.jpg 1200w, images/loft-sunlit-hall-2000.jpg 2000w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Afternoon light across the hall's original hardwood floor" loading="lazy">
@@ -342,7 +343,7 @@
   </section>
 
   <section class="cta">
-    <div class="cta__media">
+    <div class="cta__media" data-parallax>
       <picture>
         <source type="image/webp" srcset="images/loft-farm-table-1200.webp">
         <img src="images/loft-farm-table-1200.jpg" alt="" loading="lazy">

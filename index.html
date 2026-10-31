@@ -17,11 +17,12 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <link rel="preload" as="image" type="image/webp" href="images/loft-hall-wide-2000.webp" imagesrcset="images/loft-hall-wide-1200.webp 1200w, images/loft-hall-wide-2000.webp 2000w" imagesizes="100vw">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/interactive.js" defer></script>
 <script src="js/content.js" defer></script>
 <script type="application/ld+json">
 {
@@ -52,19 +53,23 @@
 
 <header class="site-header">
   <div class="site-header__inner">
+    <nav class="site-nav site-nav--left" aria-label="Main">
+      <a href="the-room.html">The Space</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Rates</a>
+    </nav>
     <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
       <span class="lockup__the" aria-hidden="true">The</span>
       <span class="lockup__loft" aria-hidden="true">Loft</span>
       <span class="lockup__num" aria-hidden="true">@708</span>
     </a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="the-room.html">The Space</a>
-      <a href="weddings.html">Weddings</a>
-      <a href="pricing.html">Rates</a>
-      <a href="for-your-guests.html">Guests</a>
-      <a class="btn" href="book-a-tour.html">Plan your event</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    <div class="site-header__tools">
+      <nav class="site-nav site-nav--right" aria-label="Plan">
+        <a href="for-your-guests.html">Guests</a>
+        <a class="btn" href="book-a-tour.html">Plan your event</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
   </div>
 </header>
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
@@ -80,7 +85,7 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero--home">
     <div class="hero__media">
       <picture data-content="hero.image">
         <source type="image/webp" srcset="images/loft-hall-wide-1200.webp 1200w, images/loft-hall-wide-2000.webp 2000w" sizes="100vw">
@@ -89,61 +94,53 @@
     </div>
     <div class="hero__shade"></div>
     <div class="hero__content">
-      <div class="hero__status fade-up">Now booking &middot; Downtown Huntingdon</div>
-      <br>
-      <div class="plaque fade-up">
-        <span class="lockup" aria-hidden="true">
-          <span class="lockup__the">The</span>
-          <span class="lockup__loft">Loft</span>
-          <span class="lockup__num">@708</span>
-        </span>
-        <span class="visually-hidden" data-venue-name>The Loft at 708</span>
-      </div>
+      <p class="hero__kicker fade-up">Downtown Huntingdon, Pennsylvania</p>
       <h1 class="display hero__title fade-up d1" data-content="hero.headline" data-content-html>A little history.<br><em>A lot of character.</em></h1>
-      <p class="hero__sub fade-up d2" data-content="hero.subheadline">Huntingdon&rsquo;s newest event space, with room for up to 279 guests on the second floor of the historic Miller Building.</p>
-      <div class="actions fade-up d3">
-        <a class="btn" href="book-a-tour.html">Plan your event</a>
-        <a class="btn btn--ghost" href="the-room.html">See the space</a>
+      <div class="hero__foot fade-up d2">
+        <p class="hero__sub" data-content="hero.subheadline">Huntingdon&rsquo;s newest event space, with room for up to 279 guests on the second floor of the historic Miller Building.</p>
+        <div class="actions">
+          <a class="btn" href="book-a-tour.html">Plan your event</a>
+          <a class="btn btn--ghost" href="the-room.html">See the space</a>
+        </div>
+      </div>
+      <div class="hero__meta fade-up d3">
+        <span>Now booking</span>
+        <span>708 Washington Street</span>
+        <span>Second floor, the Miller Building</span>
+        <span>Up to <span data-content="venue.capacity">279</span> guests</span>
       </div>
     </div>
-    <a class="hero__scroll" href="#welcome">Scroll</a>
   </section>
 
   <!-- WELCOME -->
   <section class="section" id="welcome">
-    <div class="wrap split split--wide-text">
-      <div class="reveal">
-        <div class="collage">
-          <div class="arch arch--framed collage__main">
-            <picture data-content="home.welcome.image">
-              <source type="image/webp" srcset="images/loft-window-wall-760.webp 760w, images/loft-window-wall-1200.webp 1200w" sizes="(max-width: 900px) 80vw, 480px">
-              <img src="images/loft-window-wall-1200.jpg" srcset="images/loft-window-wall-760.jpg 760w, images/loft-window-wall-1200.jpg 1200w" sizes="(max-width: 900px) 80vw, 480px" alt="Tall arched windows along the brick wall, with tables set in white linen" loading="lazy">
-            </picture>
-          </div>
-          <div class="frame collage__inset">
-            <picture data-content="home.welcome.image2">
-              <source type="image/webp" srcset="images/loft-windows-post-760.webp" sizes="260px">
-              <img src="images/loft-windows-post-760.jpg" alt="Arched windows in the brick wall beside an original timber post" loading="lazy">
-            </picture>
-          </div>
-        </div>
-      </div>
-      <div class="reveal d1">
-        <span class="eyebrow">Welcome</span>
-        <p class="statement" data-content="home.welcome.statement">Where historic charm meets rustic industrial style: exposed brick, arched windows, and the original hardwood floors.</p>
-        <p class="lede" data-content="home.welcome.text">The Loft at 708 is a one-of-a-kind event space on the second floor of the Miller Building, in the heart of downtown Huntingdon. Dress it up for a wedding or keep it rustic and relaxed for a birthday, a shower, or a holiday party. Your event, your way.</p>
-        <div class="actions">
-          <a class="text-link" href="the-room.html">Explore the space <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AT A GLANCE -->
-  <section class="section--tight section--linen" aria-label="At a glance">
     <div class="wrap">
-      <div class="stats reveal">
-        <div class="stat"><span class="stat__value" data-content="venue.capacity">279</span><span class="stat__label">Guests</span></div>
+      <div class="intro__head reveal">
+        <span class="eyebrow">Welcome to the Loft</span>
+        <p class="statement statement--xl" data-content="home.welcome.statement">Where historic charm meets rustic industrial style: exposed brick, arched windows, and the original hardwood floors.</p>
+      </div>
+      <div class="intro__grid">
+        <div class="frame frame--portrait intro__main img-reveal">
+          <picture data-content="home.welcome.image">
+            <source type="image/webp" srcset="images/loft-window-wall-760.webp 760w, images/loft-window-wall-1200.webp 1200w" sizes="(max-width: 900px) 70vw, 600px">
+            <img src="images/loft-window-wall-1200.jpg" srcset="images/loft-window-wall-760.jpg 760w, images/loft-window-wall-1200.jpg 1200w" sizes="(max-width: 900px) 70vw, 600px" alt="Tall windows along the brick wall, with tables set in white linen" loading="lazy">
+          </picture>
+        </div>
+        <div class="intro__text reveal d1">
+          <p class="lede" data-content="home.welcome.text">The Loft at 708 is a one-of-a-kind event space on the second floor of the Miller Building, in the heart of downtown Huntingdon. Dress it up for a wedding or keep it rustic and relaxed for a birthday, a shower, or a holiday party. Your event, your way.</p>
+          <div class="actions">
+            <a class="text-link" href="the-room.html">Explore the space <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="frame frame--land intro__inset img-reveal">
+          <picture data-content="home.welcome.image2">
+            <source type="image/webp" srcset="images/loft-windows-post-760.webp 760w, images/loft-windows-post-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-windows-post-760.jpg" srcset="images/loft-windows-post-760.jpg 760w, images/loft-windows-post-1200.jpg 1200w" sizes="(max-width: 900px) 50vw, 400px" alt="Windows in the brick wall beside an original timber post" loading="lazy">
+          </picture>
+        </div>
+      </div>
+      <div class="stats reveal" style="margin-top:clamp(72px, 10vw, 128px)">
+        <div class="stat"><span class="stat__value" data-content="venue.capacity" data-count>279</span><span class="stat__label">Guests</span></div>
         <div class="stat"><span class="stat__value">Full bar</span><span class="stat__label">Bar area</span></div>
         <div class="stat"><span class="stat__value">Kitchenette</span><span class="stat__label">For your caterer</span></div>
         <div class="stat"><span class="stat__value">Downtown</span><span class="stat__label">Huntingdon, PA</span></div>
@@ -151,14 +148,97 @@
     </div>
   </section>
 
-  <!-- OCCASIONS -->
-  <section class="section">
+  <!-- AN EVENING AT THE LOFT (photos change as the story scrolls) -->
+  <section class="story" aria-label="An evening at the Loft">
+    <div class="story__grid">
+      <div class="story__stage" aria-hidden="true">
+        <picture class="is-on" data-content="home.story.1.image">
+          <source type="image/webp" srcset="images/loft-door-760.webp 760w, images/loft-door-1200.webp 1200w" sizes="50vw">
+          <img src="images/loft-door-1200.jpg" srcset="images/loft-door-760.jpg 760w, images/loft-door-1200.jpg 1200w" sizes="50vw" alt="" loading="lazy">
+        </picture>
+        <picture data-content="home.story.2.image">
+          <source type="image/webp" srcset="images/loft-bar-front-1200.webp 1200w, images/loft-bar-front-2000.webp 2000w" sizes="50vw">
+          <img src="images/loft-bar-front-1200.jpg" srcset="images/loft-bar-front-1200.jpg 1200w, images/loft-bar-front-2000.jpg 2000w" sizes="50vw" alt="" loading="lazy">
+        </picture>
+        <picture data-content="home.story.3.image">
+          <source type="image/webp" srcset="images/loft-window-wall-760.webp 760w, images/loft-window-wall-1200.webp 1200w" sizes="50vw">
+          <img src="images/loft-window-wall-1200.jpg" srcset="images/loft-window-wall-760.jpg 760w, images/loft-window-wall-1200.jpg 1200w" sizes="50vw" alt="" loading="lazy">
+        </picture>
+        <picture data-content="home.story.4.image">
+          <source type="image/webp" srcset="images/loft-hall-fan-1200.webp 1200w, images/loft-hall-fan-2000.webp 2000w" sizes="50vw">
+          <img src="images/loft-hall-fan-1200.jpg" srcset="images/loft-hall-fan-1200.jpg 1200w, images/loft-hall-fan-2000.jpg 2000w" sizes="50vw" alt="" loading="lazy">
+        </picture>
+        <div class="story__progress"><span class="is-on"></span><span></span><span></span><span></span></div>
+      </div>
+      <ol class="story__steps">
+        <li class="story__intro">
+          <span class="eyebrow">An evening at the Loft</span>
+          <h2 class="h2">From the black door <em>to the last dance</em></h2>
+        </li>
+        <li class="story__step is-on">
+          <div class="story__img-mobile"><img data-content="home.story.4.image" data-content="home.story.3.image" data-content="home.story.2.image" data-content="home.story.1.image" src="images/loft-door-760.jpg" alt="The black door to The Loft, with its name in gold letters" loading="lazy"></div>
+          <span class="story__time">Arrival</span>
+          <h3 data-content="home.story.1.title">Find the black door</h3>
+          <p data-content="home.story.1.text">Up on the second floor of the Miller Building, your guests are greeted by our name in gold. Everything past it is yours for the night.</p>
+        </li>
+        <li class="story__step">
+          <div class="story__img-mobile"><img src="images/loft-bar-front-760.jpg" alt="The reclaimed-brick bar under its timber canopy" loading="lazy"></div>
+          <span class="story__time">Cocktails</span>
+          <h3 data-content="home.story.2.title">Gather at the bar</h3>
+          <p data-content="home.story.2.text">Reclaimed brick under a timber canopy. Guests find a drink and each other while the room fills.</p>
+        </li>
+        <li class="story__step">
+          <div class="story__img-mobile"><img src="images/loft-window-wall-760.jpg" alt="Tables in white linen beneath the tall windows" loading="lazy"></div>
+          <span class="story__time">Dinner</span>
+          <h3 data-content="home.story.3.title">Dinner by the windows</h3>
+          <p data-content="home.story.3.text">Tables in white linen beneath the tall windows, with your caterer working from the kitchenette close by.</p>
+        </li>
+        <li class="story__step">
+          <div class="story__img-mobile"><img src="images/loft-hall-fan-760.jpg" alt="The open hall with its original hardwood floor" loading="lazy"></div>
+          <span class="story__time">Dancing</span>
+          <h3 data-content="home.story.4.title">The floor is yours</h3>
+          <p data-content="home.story.4.text">The original hardwood becomes the dance floor, the sound system fills the room, and nobody wants to go home.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- OCCASIONS (hover or tap a line to change the photo) -->
+  <section class="section section--linen">
     <div class="wrap split split--top">
       <div class="sticky-media reveal">
-        <div class="arch arch--framed">
+        <div class="swap" data-swap>
           <picture data-content="home.occasions.image">
             <source type="image/webp" srcset="images/loft-tables-posts-760.webp 760w, images/loft-tables-posts-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
             <img src="images/loft-tables-posts-1200.jpg" srcset="images/loft-tables-posts-760.jpg 760w, images/loft-tables-posts-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="Round tables set between the hall's timber posts" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="weddings" data-content="home.occasions.weddings.image">
+            <source type="image/webp" srcset="images/loft-window-wall-760.webp 760w, images/loft-window-wall-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-window-wall-1200.jpg" srcset="images/loft-window-wall-760.jpg 760w, images/loft-window-wall-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="showers" data-content="home.occasions.showers.image">
+            <source type="image/webp" srcset="images/loft-farm-table-760.webp 760w, images/loft-farm-table-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-farm-table-1200.jpg" srcset="images/loft-farm-table-760.jpg 760w, images/loft-farm-table-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="birthdays" data-content="home.occasions.birthdays.image">
+            <source type="image/webp" srcset="images/loft-bar-front-760.webp 760w, images/loft-bar-front-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-bar-front-1200.jpg" srcset="images/loft-bar-front-760.jpg 760w, images/loft-bar-front-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="corporate" data-content="home.occasions.corporate.image">
+            <source type="image/webp" srcset="images/loft-toward-bar-760.webp 760w, images/loft-toward-bar-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-toward-bar-1200.jpg" srcset="images/loft-toward-bar-760.jpg 760w, images/loft-toward-bar-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="fundraisers" data-content="home.occasions.fundraisers.image">
+            <source type="image/webp" srcset="images/loft-hall-wide-1200.webp" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-hall-wide-1200.jpg" alt="" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="reunions" data-content="home.occasions.reunions.image">
+            <source type="image/webp" srcset="images/loft-bar-view-760.webp 760w, images/loft-bar-view-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-bar-view-1200.jpg" srcset="images/loft-bar-view-760.jpg 760w, images/loft-bar-view-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="" loading="lazy">
+          </picture>
+          <picture class="swap__layer" data-layer="holidays" data-content="home.occasions.holidays.image">
+            <source type="image/webp" srcset="images/loft-sunlit-hall-760.webp 760w, images/loft-sunlit-hall-1200.webp 1200w" sizes="(max-width: 900px) 90vw, 540px">
+            <img src="images/loft-sunlit-hall-1200.jpg" srcset="images/loft-sunlit-hall-760.jpg 760w, images/loft-sunlit-hall-1200.jpg 1200w" sizes="(max-width: 900px) 90vw, 540px" alt="" loading="lazy">
           </picture>
         </div>
       </div>
@@ -168,32 +248,32 @@
         <p class="lede" data-content="home.occasions.intro">One open room with space for up to 279 guests, ready to be dressed up or kept rustic and relaxed.</p>
         <ul class="occasions">
           <li>
-            <a class="occasion" href="weddings.html">
+            <a class="occasion" href="weddings.html" data-occasion="weddings">
               <span class="occasion__name" data-content="home.occasions.weddings.name">Wedding receptions</span>
               <span class="occasion__desc" data-content="home.occasions.weddings.desc">Dinner under the arched windows, a full bar area, and room to dance until the last song.</span>
             </a>
           </li>
-          <li class="occasion">
+          <li class="occasion" data-occasion="showers" tabindex="0">
             <span class="occasion__name" data-content="home.occasions.showers.name">Showers</span>
             <span class="occasion__desc" data-content="home.occasions.showers.desc">Bridal and baby showers in a bright, beautiful room downtown.</span>
           </li>
-          <li class="occasion">
+          <li class="occasion" data-occasion="birthdays" tabindex="0">
             <span class="occasion__name" data-content="home.occasions.birthdays.name">Birthdays &amp; anniversaries</span>
             <span class="occasion__desc" data-content="home.occasions.birthdays.desc">Milestones worth celebrating, dressed up or kept easygoing.</span>
           </li>
-          <li class="occasion">
+          <li class="occasion" data-occasion="corporate" tabindex="0">
             <span class="occasion__name" data-content="home.occasions.corporate.name">Corporate events</span>
             <span class="occasion__desc" data-content="home.occasions.corporate.desc">Meetings, lunches, and company parties, with a sound system built in.</span>
           </li>
-          <li class="occasion">
+          <li class="occasion" data-occasion="fundraisers" tabindex="0">
             <span class="occasion__name" data-content="home.occasions.fundraisers.name">Fundraisers</span>
             <span class="occasion__desc" data-content="home.occasions.fundraisers.desc">Benefits and community nights with room for a crowd, right on Washington Street.</span>
           </li>
-          <li class="occasion">
+          <li class="occasion" data-occasion="reunions" tabindex="0">
             <span class="occasion__name" data-content="home.occasions.reunions.name">Class reunions</span>
             <span class="occasion__desc" data-content="home.occasions.reunions.desc">Long tables, a full bar area, and plenty of room to catch up.</span>
           </li>
-          <li class="occasion">
+          <li class="occasion" data-occasion="holidays" tabindex="0">
             <span class="occasion__name" data-content="home.occasions.holidays.name">Holiday parties</span>
             <span class="occasion__desc" data-content="home.occasions.holidays.desc">Office and family gatherings in a room that already feels festive.</span>
           </li>
@@ -206,23 +286,65 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="section section--linen" id="gallery">
+  <!-- GUEST PLANNER -->
+  <section class="section" id="planner">
     <div class="wrap">
-      <div class="center reveal">
-        <span class="eyebrow">Take a look around</span>
-        <h2 class="h2">The room, <em>set and ready</em></h2>
+      <div class="planner" data-planner data-max="279">
+        <div class="reveal">
+          <span class="eyebrow">Will we fit?</span>
+          <h2 class="h2">Slide to your <em>guest count</em></h2>
+          <div class="planner__modes" role="group" aria-label="Kind of event">
+            <button type="button" data-mode="seated" aria-pressed="true">Seated dinner</button>
+            <button type="button" data-mode="standing" aria-pressed="false">Cocktail party</button>
+          </div>
+          <label class="visually-hidden" for="planner-range">Number of guests</label>
+          <input class="range" id="planner-range" type="range" min="10" max="279" step="1" value="120">
+          <div class="range-scale"><span>10</span><span>279</span></div>
+          <p class="planner__read" aria-live="polite"></p>
+          <p class="planner__note">A rough guide using round tables of eight. Your exact layout gets planned with you.</p>
+        </div>
+        <div class="reveal d1">
+          <div class="planner__count"><span data-planner-count>120</span><small>Guests</small></div>
+          <div class="floor" aria-hidden="true" style="margin-top:28px">
+            <span class="floor__key" data-planner-key>Tables of eight</span>
+            <div class="floor__tables"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BAND -->
+  <section class="band" aria-label="The hall in afternoon light">
+    <div class="band__media" data-parallax>
+      <picture data-content="home.band.image">
+        <source type="image/webp" srcset="images/loft-sunlit-hall-1200.webp 1200w, images/loft-sunlit-hall-2000.webp 2000w" sizes="100vw">
+        <img src="images/loft-sunlit-hall-2000.jpg" srcset="images/loft-sunlit-hall-1200.jpg 1200w, images/loft-sunlit-hall-2000.jpg 2000w" sizes="100vw" alt="Afternoon light across the hall's original hardwood floor" loading="lazy">
+      </picture>
+    </div>
+    <p class="band__caption" data-content="home.band.caption">Afternoon light on the original hardwood floors</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Take a look around</span>
+          <h2 class="h2">The room, <em>set and ready</em></h2>
+        </div>
+        <p class="lede">Tap any photo to see it full size, then use the arrows to walk the whole room.</p>
       </div>
       <div class="gallery reveal d1">
         <button class="gallery__item" type="button" aria-label="Open photo: the full hall set for dinner">
           <picture data-content="room.gallery.1">
-            <source type="image/webp" srcset="images/loft-hall-wide-1200.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <source type="image/webp" srcset="images/loft-hall-wide-1200.webp" sizes="(max-width: 900px) 100vw, 700px">
             <img src="images/loft-hall-wide-1200.jpg" alt="The full hall set with round tables, timber posts, and arched windows" loading="lazy" width="1200" height="900">
           </picture>
         </button>
         <button class="gallery__item" type="button" aria-label="Open photo: the bar">
           <picture data-content="room.gallery.2">
-            <source type="image/webp" srcset="images/loft-bar-front-1200.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <source type="image/webp" srcset="images/loft-bar-front-1200.webp" sizes="(max-width: 900px) 50vw, 500px">
             <img src="images/loft-bar-front-1200.jpg" alt="The reclaimed-brick bar under its timber canopy" loading="lazy" width="1200" height="900">
           </picture>
         </button>
@@ -232,9 +354,9 @@
             <img src="images/loft-window-wall-760.jpg" alt="Sunlight through the arched windows onto tables in white linen" loading="lazy" width="760" height="1013">
           </picture>
         </button>
-        <button class="gallery__item" type="button" aria-label="Open photo: the arched windows">
+        <button class="gallery__item" type="button" aria-label="Open photo: the windows and a timber post">
           <picture data-content="room.gallery.4">
-            <source type="image/webp" srcset="images/loft-windows-post-1200.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <source type="image/webp" srcset="images/loft-windows-post-1200.webp" sizes="(max-width: 900px) 100vw, 400px">
             <img src="images/loft-windows-post-1200.jpg" alt="Arched windows in the exposed brick wall beside an original timber post" loading="lazy" width="1200" height="900">
           </picture>
         </button>
@@ -246,19 +368,19 @@
         </button>
         <button class="gallery__item" type="button" aria-label="Open photo: the open hall">
           <picture data-content="room.gallery.6">
-            <source type="image/webp" srcset="images/loft-hall-fan-1200.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <source type="image/webp" srcset="images/loft-hall-fan-1200.webp" sizes="(max-width: 900px) 50vw, 700px">
             <img src="images/loft-hall-fan-1200.jpg" alt="The open hall with its hardwood floor, timber posts, and arched windows" loading="lazy" width="1200" height="900">
           </picture>
         </button>
         <button class="gallery__item" type="button" aria-label="Open photo: the farm tables">
           <picture data-content="room.gallery.7">
-            <source type="image/webp" srcset="images/loft-farm-table-760.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <source type="image/webp" srcset="images/loft-farm-table-760.webp" sizes="(max-width: 900px) 100vw, 500px">
             <img src="images/loft-farm-table-760.jpg" alt="Rustic farm tables beside the dining floor" loading="lazy" width="760" height="1013">
           </picture>
         </button>
         <button class="gallery__item" type="button" aria-label="Open photo: the hall in afternoon light">
           <picture data-content="room.gallery.8">
-            <source type="image/webp" srcset="images/loft-sunlit-hall-1200.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <source type="image/webp" srcset="images/loft-sunlit-hall-1200.webp" sizes="(max-width: 900px) 50vw, 800px">
             <img src="images/loft-sunlit-hall-1200.jpg" alt="Afternoon light across the original hardwood floor" loading="lazy" width="1200" height="900">
           </picture>
         </button>
@@ -269,30 +391,26 @@
           </picture>
         </button>
       </div>
-      <div class="center actions reveal">
+      <div class="actions reveal">
         <a class="text-link" href="the-room.html">More about the space <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
 
   <!-- THE BAR -->
-  <section class="section section--ink">
-    <div class="wrap split">
-      <div class="feature-media reveal">
-        <div class="arch arch--framed">
-          <picture data-content="home.bar.image">
-            <source type="image/webp" srcset="images/loft-bar-front-760.webp 760w, images/loft-bar-front-1200.webp 1200w" sizes="(max-width: 900px) 80vw, 520px">
-            <img src="images/loft-bar-front-1200.jpg" srcset="images/loft-bar-front-760.jpg 760w, images/loft-bar-front-1200.jpg 1200w" sizes="(max-width: 900px) 80vw, 520px" alt="The reclaimed-brick bar under its timber canopy" loading="lazy">
-          </picture>
-        </div>
-      </div>
-      <div class="reveal d1">
-        <span class="eyebrow">The bar</span>
-        <h2 class="h2" data-content="home.bar.headline" data-content-html>A bar <em>of our own</em></h2>
-        <p class="lede" data-content="home.bar.text">A full bar area built from reclaimed brick under a timber canopy, with a convenient kitchenette close by for your caterer and a sound system that fills the room.</p>
-        <div class="actions">
-          <a class="text-link" href="pricing.html#bar">Bar options <span aria-hidden="true">&rarr;</span></a>
-        </div>
+  <section class="bleed bleed--ink">
+    <div class="bleed__media img-reveal">
+      <picture data-content="home.bar.image">
+        <source type="image/webp" srcset="images/loft-bar-front-1200.webp 1200w, images/loft-bar-front-2000.webp 2000w" sizes="(max-width: 900px) 100vw, 50vw">
+        <img src="images/loft-bar-front-1200.jpg" srcset="images/loft-bar-front-1200.jpg 1200w, images/loft-bar-front-2000.jpg 2000w" sizes="(max-width: 900px) 100vw, 50vw" alt="The reclaimed-brick bar under its timber canopy" loading="lazy">
+      </picture>
+    </div>
+    <div class="bleed__body reveal">
+      <span class="eyebrow">The bar</span>
+      <h2 class="h2" data-content="home.bar.headline" data-content-html>A bar <em>of our own</em></h2>
+      <p class="lede" data-content="home.bar.text">A full bar area built from reclaimed brick under a timber canopy, with a convenient kitchenette close by for your caterer and a sound system that fills the room.</p>
+      <div class="actions">
+        <a class="text-link" href="pricing.html#bar">Bar options <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -338,25 +456,21 @@
   </section>
 
   <!-- FIND US -->
-  <section class="section section--linen">
-    <div class="wrap split split--reverse-mobile">
-      <div class="reveal">
-        <span class="eyebrow">Finding us</span>
-        <h2 class="h2" data-content="home.findus.headline" data-content-html>Look for the <em>black door</em></h2>
-        <p class="lede" data-content="home.findus.text">We are on the second floor of the Miller Building at 708 Washington Street. Come up to the second floor and you will see our name in gold on the door.</p>
-        <div class="address">
-          <span class="address__line">708 Washington Street</span>
-          <span class="address__sub">Second floor &middot; Huntingdon, Pennsylvania</span>
-          <a class="text-link" data-config-link="maps" href="https://www.google.com/maps/search/?api=1&amp;query=708%20Washington%20Street%2C%20Huntingdon%2C%20PA" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-      <div class="feature-media reveal d1">
-        <div class="arch arch--framed">
-          <picture data-content="home.findus.image">
-            <source type="image/webp" srcset="images/loft-door-760.webp 760w, images/loft-door-1200.webp 1200w" sizes="(max-width: 900px) 80vw, 520px">
-            <img src="images/loft-door-1200.jpg" srcset="images/loft-door-760.jpg 760w, images/loft-door-1200.jpg 1200w" sizes="(max-width: 900px) 80vw, 520px" alt="The black door to The Loft, with its name in gold letters" loading="lazy">
-          </picture>
-        </div>
+  <section class="bleed bleed--linen bleed--flip">
+    <div class="bleed__media img-reveal">
+      <picture data-content="home.findus.image">
+        <source type="image/webp" srcset="images/loft-door-760.webp 760w, images/loft-door-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw">
+        <img src="images/loft-door-1200.jpg" srcset="images/loft-door-760.jpg 760w, images/loft-door-1200.jpg 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="The black door to The Loft, with its name in gold letters" loading="lazy">
+      </picture>
+    </div>
+    <div class="bleed__body reveal">
+      <span class="eyebrow">Finding us</span>
+      <h2 class="h2" data-content="home.findus.headline" data-content-html>Look for the <em>black door</em></h2>
+      <p class="lede" data-content="home.findus.text">We are on the second floor of the Miller Building at 708 Washington Street. Come up to the second floor and you will see our name in gold on the door.</p>
+      <div class="address">
+        <span class="address__line">708 Washington Street</span>
+        <span class="address__sub">Second floor &middot; Huntingdon, Pennsylvania</span>
+        <a class="text-link" data-config-link="maps" href="https://www.google.com/maps/search/?api=1&amp;query=708%20Washington%20Street%2C%20Huntingdon%2C%20PA" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -379,7 +493,7 @@
 
   <!-- CTA -->
   <section class="cta">
-    <div class="cta__media">
+    <div class="cta__media" data-parallax>
       <picture data-content="home.cta.image">
         <source type="image/webp" srcset="images/loft-window-wall-1200.webp">
         <img src="images/loft-window-wall-1200.jpg" alt="" loading="lazy">

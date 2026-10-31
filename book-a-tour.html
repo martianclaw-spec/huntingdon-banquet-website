@@ -17,10 +17,11 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/interactive.js" defer></script>
 <script src="js/content.js" defer></script>
 <script src="js/inquire.js" defer></script>
 </head>
@@ -29,19 +30,23 @@
 
 <header class="site-header">
   <div class="site-header__inner">
+    <nav class="site-nav site-nav--left" aria-label="Main">
+      <a href="the-room.html">The Space</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Rates</a>
+    </nav>
     <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
       <span class="lockup__the" aria-hidden="true">The</span>
       <span class="lockup__loft" aria-hidden="true">Loft</span>
       <span class="lockup__num" aria-hidden="true">@708</span>
     </a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="the-room.html">The Space</a>
-      <a href="weddings.html">Weddings</a>
-      <a href="pricing.html">Rates</a>
-      <a href="for-your-guests.html">Guests</a>
-      <a class="btn" href="book-a-tour.html" aria-current="page">Plan your event</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    <div class="site-header__tools">
+      <nav class="site-nav site-nav--right" aria-label="Plan">
+        <a href="for-your-guests.html">Guests</a>
+        <a class="btn" href="book-a-tour.html" aria-current="page">Plan your event</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
   </div>
 </header>
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
@@ -97,12 +102,12 @@
                 <option value="">Choose one</option>
                 <option>Wedding</option>
                 <option>Rehearsal dinner</option>
-                <option>Shower or party</option>
-                <option>Celebration of life</option>
-                <option>Graduation</option>
+                <option>Shower</option>
+                <option>Birthday or anniversary</option>
+                <option>Corporate event</option>
+                <option>Fundraiser</option>
                 <option>Class reunion</option>
-                <option>Church or civic banquet</option>
-                <option>Corporate or meeting</option>
+                <option>Holiday party</option>
                 <option>Something else</option>
               </select>
             </div>
@@ -158,6 +163,12 @@
       </div>
 
       <aside class="reveal d1">
+        <div class="summary" data-summary aria-live="polite">
+          <span class="summary__label">Your event</span>
+          <p class="summary__main" data-sum-main>Start filling in the form and your event takes shape here.</p>
+          <ul class="summary__facts" data-sum-facts hidden></ul>
+          <p class="summary__hint" data-sum-hint hidden></p>
+        </div>
         <div class="aside-card">
           <span class="eyebrow">What happens next</span>
           <ol class="steps">

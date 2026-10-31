@@ -106,7 +106,7 @@
 
   // ---- scroll reveal ----
 
-  var reveals = document.querySelectorAll('.reveal');
+  var reveals = document.querySelectorAll('.reveal, .img-reveal');
   if ('IntersectionObserver' in window && reveals.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

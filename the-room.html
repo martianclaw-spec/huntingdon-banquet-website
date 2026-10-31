@@ -17,10 +17,11 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
+<script src="js/interactive.js" defer></script>
 <script src="js/content.js" defer></script>
 </head>
 <body>
@@ -28,19 +29,23 @@
 
 <header class="site-header">
   <div class="site-header__inner">
+    <nav class="site-nav site-nav--left" aria-label="Main">
+      <a href="the-room.html" aria-current="page">The Space</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="pricing.html">Rates</a>
+    </nav>
     <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
       <span class="lockup__the" aria-hidden="true">The</span>
       <span class="lockup__loft" aria-hidden="true">Loft</span>
       <span class="lockup__num" aria-hidden="true">@708</span>
     </a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="the-room.html" aria-current="page">The Space</a>
-      <a href="weddings.html">Weddings</a>
-      <a href="pricing.html">Rates</a>
-      <a href="for-your-guests.html">Guests</a>
-      <a class="btn" href="book-a-tour.html">Plan your event</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    <div class="site-header__tools">
+      <nav class="site-nav site-nav--right" aria-label="Plan">
+        <a href="for-your-guests.html">Guests</a>
+        <a class="btn" href="book-a-tour.html">Plan your event</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
   </div>
 </header>
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
@@ -81,12 +86,46 @@
     </div>
   </section>
 
-  <section class="section" id="photos">
+  <section class="section" id="explore">
     <div class="wrap">
-      <div class="center reveal">
-        <span class="eyebrow">Photos</span>
-        <h2 class="h2">Take a <em>look around</em></h2>
-        <p class="lede">Tap any photo to see it larger.</p>
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Explore the room</span>
+          <h2 class="h2">Tap around <em>the hall</em></h2>
+        </div>
+        <p class="lede">Every dot is a detail worth knowing. Tap one to read about it.</p>
+      </div>
+      <div class="hotspots reveal d1" style="margin-top:48px">
+        <div class="frame hotspots__img" style="aspect-ratio:4/3">
+          <picture>
+            <source type="image/webp" srcset="images/loft-hall-fan-1200.webp 1200w, images/loft-hall-fan-2000.webp 2000w" sizes="(max-width: 1200px) 100vw, 1100px">
+            <img src="images/loft-hall-fan-1200.jpg" srcset="images/loft-hall-fan-1200.jpg 1200w, images/loft-hall-fan-2000.jpg 2000w" sizes="(max-width: 1200px) 100vw, 1100px" alt="The empty hall: brick walls, tall windows, timber posts, and a hardwood floor under an open ceiling" loading="lazy">
+          </picture>
+        </div>
+        <button class="hotspot" type="button" style="left:33%; top:11%" aria-expanded="false" aria-controls="hs-1" aria-label="The ceiling"><span aria-hidden="true">+</span></button>
+        <button class="hotspot" type="button" style="left:79%; top:56%" aria-expanded="false" aria-controls="hs-2" aria-label="The windows"><span aria-hidden="true">+</span></button>
+        <button class="hotspot" type="button" style="left:54%; top:60%" aria-expanded="false" aria-controls="hs-3" aria-label="The timber posts"><span aria-hidden="true">+</span></button>
+        <button class="hotspot" type="button" style="left:37%; top:87%" aria-expanded="false" aria-controls="hs-4" aria-label="The floor"><span aria-hidden="true">+</span></button>
+        <button class="hotspot" type="button" style="left:13%; top:64%" aria-expanded="false" aria-controls="hs-5" aria-label="The brick"><span aria-hidden="true">+</span></button>
+        <button class="hotspot" type="button" style="left:70%; top:40%" aria-expanded="false" aria-controls="hs-6" aria-label="The sound system"><span aria-hidden="true">+</span></button>
+        <div class="hotspot__card" id="hs-1" role="note"><strong data-content="room.hotspot.1.title">An open ceiling</strong><p data-content="room.hotspot.1.text">Exposed joists and beams overhead give the room its height and its industrial character.</p></div>
+        <div class="hotspot__card" id="hs-2" role="note"><strong data-content="room.hotspot.2.title">Arched windows</strong><p data-content="room.hotspot.2.text">Tall windows run along two walls and fill the room with daylight.</p></div>
+        <div class="hotspot__card" id="hs-3" role="note"><strong data-content="room.hotspot.3.title">Original timber</strong><p data-content="room.hotspot.3.text">The building&rsquo;s original wood posts and beams, left exposed and part of every photo.</p></div>
+        <div class="hotspot__card" id="hs-4" role="note"><strong data-content="room.hotspot.4.title">Original hardwood</strong><p data-content="room.hotspot.4.text">The original hardwood floors, ready to hold your tables and then your dance floor.</p></div>
+        <div class="hotspot__card" id="hs-5" role="note"><strong data-content="room.hotspot.5.title">Exposed brick</strong><p data-content="room.hotspot.5.text">Warm, original brick on the outer walls. It needs no decorating, though it takes string lights beautifully.</p></div>
+        <div class="hotspot__card" id="hs-6" role="note"><strong data-content="room.hotspot.6.title">Sound system</strong><p data-content="room.hotspot.6.text">A house sound system for music, toasts, and announcements.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--linen" id="photos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Photos</span>
+          <h2 class="h2">Take a <em>look around</em></h2>
+        </div>
+        <p class="lede">Tap any photo to see it full size, then use the arrows to walk the whole room.</p>
       </div>
       <div class="gallery reveal d1">
         <button class="gallery__item" type="button" aria-label="Open photo: the full hall set for dinner">
@@ -171,7 +210,7 @@
   </section>
 
   <section class="cta">
-    <div class="cta__media">
+    <div class="cta__media" data-parallax>
       <picture>
         <source type="image/webp" srcset="images/loft-tables-posts-1200.webp">
         <img src="images/loft-tables-posts-1200.jpg" alt="" loading="lazy">
