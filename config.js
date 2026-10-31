@@ -21,6 +21,10 @@ window.VENUE = {
   // `email` instead. Empty: the form opens an email to `email` directly.
   inquiryUrl: 'https://diy-customer.vercel.app/api/inquiry/loft',
 
+  // Booked days from Michele's "Loft bookings" phone calendar, dates only.
+  // Empty means the availability calendar uses the admin's list alone.
+  availabilityUrl: 'https://diy-customer.vercel.app/api/availability/loft',
+
   // Where js/content.js fetches owner-made content changes from. Empty or
   // unreachable means the site shows its built-in copy.
   contentUrl: 'https://diy-customer.vercel.app/api/content/loft',

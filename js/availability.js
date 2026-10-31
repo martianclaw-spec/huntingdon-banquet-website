@@ -1,11 +1,12 @@
 // The availability calendar on the "Plan your event" page.
 //
-// Booked dates come from Michele's "Booked dates" list in the admin, read
-// from the same content feed js/content.js uses (under "@collections"). A row
-// whose status mentions "hold" shows as on hold; anything else is booked.
-// Tapping an open day writes it into the form's date field.
+// Booked dates come from two places: Michele's "Loft bookings" phone calendar
+// (config availabilityUrl, which returns dates only; an event titled with
+// "hold" is on hold) and the "Booked dates" list in her admin, read from the
+// content feed under "@collections". Tapping an open day writes it into the
+// form's date field.
 //
-// If the feed cannot be reached, every future day shows as open and the
+// If neither source can be reached, every future day shows as open and the
 // calendar says so, since the inquiry is confirmed by a person anyway.
 (function () {
   'use strict';
@@ -140,26 +141,44 @@
   render();
   statusEl.textContent = 'Checking booked dates…';
 
-  if (!V.contentUrl || !window.fetch) {
+  function mark(k, hold) {
+    if (!k || taken[k] === 'booked') return;
+    taken[k] = hold ? 'hold' : 'booked';
+  }
+
+  function getJson(url) {
+    return fetch(url, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  }
+
+  // Two sources, either of which may be empty: Michele's phone calendar
+  // (availabilityUrl, dates only) and the "Booked dates" list in her admin.
+  var sources = [];
+  if (window.fetch && V.availabilityUrl) {
+    sources.push(getJson(V.availabilityUrl).then(function (data) {
+      (data.days || []).forEach(function (d) { mark(parseDay(d.date), d.status === 'hold'); });
+    }));
+  }
+  if (window.fetch && V.contentUrl) {
+    sources.push(getJson(V.contentUrl).then(function (data) {
+      var rows = ((data && data['@collections']) || {})['calendar.booked'] || [];
+      rows.forEach(function (row) { mark(parseDay(row.date), /hold/i.test(row.status || '')); });
+    }));
+  }
+  if (!sources.length) {
     statusEl.textContent = 'Pick a date and we will confirm it with you.';
     return;
   }
-  fetch(V.contentUrl, { cache: 'no-store' })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (data) {
-      var rows = ((data && data['@collections']) || {})['calendar.booked'] || [];
-      rows.forEach(function (row) {
-        var k = parseDay(row.date);
-        if (!k) return;
-        var hold = /hold/i.test(row.status || '');
-        if (taken[k] === 'booked') return;
-        taken[k] = hold ? 'hold' : 'booked';
-      });
+
+  var settled = 0, failed = 0;
+  sources.forEach(function (p) {
+    p.catch(function () { failed++; }).then(function () {
+      settled++;
       if (selected && taken[selected]) selected = '';
       render();
-      statusEl.textContent = 'Open dates can be tapped. Every date is confirmed with you before anything is final.';
-    })
-    .catch(function () {
-      statusEl.textContent = 'Booked dates could not load right now. Pick any date and we will confirm it with you.';
+      if (settled < sources.length) return;
+      statusEl.textContent = failed === sources.length
+        ? 'Booked dates could not load right now. Pick any date and we will confirm it with you.'
+        : 'Open dates can be tapped. Every date is confirmed with you before anything is final.';
     });
+  });
 })();
