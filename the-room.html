@@ -3,133 +3,209 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The room</title>
+<title>The Space | The Loft at 708</title>
+<meta name="description" content="Exposed brick, arched windows, original timber posts, and a full bar: a look around The Loft at 708, a second-floor event hall in downtown Huntingdon, PA.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Loft at 708">
+<meta property="og:title" content="The Space | The Loft at 708">
+<meta property="og:description" content="Brick, timber, and a whole lot of light, on the second floor at 708 Washington Street.">
+<meta property="og:image" content="https://huntingdon-banquet-website.vercel.app/images/loft-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#151412">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <script src="config.js"></script>
 <script src="js/site.js" defer></script>
 <script src="js/content.js" defer></script>
-<script src="js/room.js" defer></script>
 </head>
 <body>
-<div class="notice-bar">
-  <div class="notice-bar-inner">
-    <span class="notice-label" data-content="notice.label">Opening soon</span>
-    <span data-content="notice.text">The hall is mid-renovation &mdash; these photos show the room as it is today, dust and all.</span>
-    <a href="book-a-tour.html">Book an early tour &rarr;</a>
-  </div>
-</div>
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="site-header-inner">
-    <a class="wordmark" href="index.html" data-venue-name>The Loft at 708</a>
-    <nav class="site-nav" aria-label="Site">
-      <a href="the-room.html" aria-current="page">The room</a>
+  <div class="site-header__inner">
+    <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
+      <span class="lockup__the" aria-hidden="true">The</span>
+      <span class="lockup__loft" aria-hidden="true">Loft</span>
+      <span class="lockup__num" aria-hidden="true">@708</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="the-room.html" aria-current="page">The Space</a>
       <a href="weddings.html">Weddings</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="for-your-guests.html">For your guests</a>
-      <a class="nav-cta" href="book-a-tour.html">Book a tour</a>
+      <a href="pricing.html">Rates</a>
+      <a href="for-your-guests.html">Guests</a>
+      <a class="btn" href="book-a-tour.html">Plan your event</a>
     </nav>
+    <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
   </div>
 </header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="the-room.html" aria-current="page">The Space</a>
+  <a href="weddings.html">Weddings</a>
+  <a href="pricing.html">Rates</a>
+  <a href="for-your-guests.html">Guests</a>
+  <a class="btn" href="book-a-tour.html">Plan your event</a>
+  <p class="mobile-menu__meta">708 Washington Street, second floor<br>Huntingdon, PA</p>
+</div>
 
-<main class="page">
-  <div class="container">
+<main id="main">
 
-    <!-- header 4/8 -->
-    <div class="grid-48" style="align-items:end; padding-bottom:56px; border-bottom:1px solid #C9A97E;">
-      <div>
-        <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
-        <div class="u eyebrow">The room</div>
-      </div>
-      <div>
-        <h1 class="display" data-content="room.headline" data-content-html>Every layout works <em>around the posts</em></h1>
-        <p class="lede" style="max-width:62ch;" data-content="room.intro">Six heavy timber posts stand in the open floor, original to the 1890s frame. They&rsquo;re the first thing every planner asks about, so here&rsquo;s the honest answer: we draw every setup around them. Switch the plan and see.</p>
+  <section class="hero hero--page">
+    <div class="hero__media">
+      <picture data-content="room.hero.image">
+        <source type="image/webp" srcset="images/loft-farm-table-760.webp 760w, images/loft-farm-table-1200.webp 1200w" sizes="100vw">
+        <img src="images/loft-farm-table-1200.jpg" srcset="images/loft-farm-table-760.jpg 760w, images/loft-farm-table-1200.jpg 1200w" sizes="100vw" alt="The hall with round tables, farm tables, and arched windows" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__content">
+      <span class="eyebrow fade-up">The Space</span>
+      <h1 class="display hero__title fade-up d1" data-content="room.headline" data-content-html>Brick, timber, and <em>a whole lot of light</em></h1>
+      <p class="hero__sub fade-up d2" data-content="room.intro">Arched windows run along two walls, original timber posts hold up the ceiling, and the hardwood floor glows when the afternoon sun comes in. It is a big, open room that still feels warm, whether you are seating forty or two hundred and fifty.</p>
+    </div>
+  </section>
+
+  <section class="section--tight section--linen" aria-label="At a glance">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat"><span class="stat__value" data-content="venue.capacity">250</span><span class="stat__label">Guests</span></div>
+        <div class="stat"><span class="stat__value" data-content="venue.sqft">4,500</span><span class="stat__label">Square feet</span></div>
+        <div class="stat"><span class="stat__value">Full bar</span><span class="stat__label">On site</span></div>
+        <div class="stat"><span class="stat__value">Elevator</span><span class="stat__label">To the second floor</span></div>
       </div>
     </div>
+  </section>
 
-    <!-- plan block -->
-    <div style="padding:56px 0 0;">
-      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
-        <div class="seg" role="group" aria-label="Floor plan configuration">
-          <button type="button" data-mode="dinner" aria-pressed="true">Seated dinner</button>
-          <button type="button" data-mode="cocktail" aria-pressed="false">Cocktail</button>
-          <button type="button" data-mode="ceremony" aria-pressed="false">Ceremony</button>
-        </div>
-        <div class="u eyebrow" data-content="room.dimensions">80&prime; &times; 50&prime; &middot; 4,500 sq ft</div>
+  <section class="section" id="photos">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Photos</span>
+        <h2 class="h2">Take a <em>look around</em></h2>
+        <p class="lede">Tap any photo to see it larger.</p>
       </div>
-
-      <!-- readout -->
-      <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px 32px; border-top:1px solid #C9A97E; border-bottom:1px solid #C9A97E; padding:18px 0; margin:24px 0 8px;" aria-live="polite">
-        <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
-          <span id="mode-label" style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:34px; line-height:1;">Seated dinner</span>
-          <span id="seats-line" class="u eyebrow" style="color:#A05B45; font-weight:600;"></span>
-        </div>
-        <div id="config-line" class="u eyebrow"></div>
-      </div>
-
-      <!-- plan drawing (inline SVG, three <g> layers cross-faded) -->
-      <div id="plan" style="min-height:440px;"></div>
-      <p class="u" style="font-weight:400; margin:8px 0 0; max-width:70ch;" data-content="room.plan_note">Illustrative &mdash; the room is mid-renovation and final layouts, counts, and positions will be confirmed as it&rsquo;s finished. Walk it with us and we&rsquo;ll draw yours.</p>
-    </div>
-
-    <!-- specs 4/8 -->
-    <div class="grid-48 sect">
-      <div>
-        <svg class="section-arc" width="40" height="20" viewBox="0 0 40 20" aria-hidden="true"><path d="M2 20 A18 18 0 0 1 38 20" fill="none" stroke="#C9A97E" stroke-width="1.5"/></svg>
-        <h2 style="font-family:'Canela','Newsreader',serif; font-weight:400; font-size:34px; line-height:1.1; margin:0;">Specifications</h2>
-        <p class="lede" style="margin-top:16px; max-width:34ch;">The plain facts a planner needs before they walk the room.</p>
-      </div>
-      <div class="rows">
-        <div class="row-200">
-          <div class="u">Dimensions</div>
-          <div data-content="room.specs.dimensions">Approx. 80&prime; &times; 50&prime; &middot; 4,500 square feet of open floor.</div>
-        </div>
-        <div class="row-200">
-          <div class="u">Capacity</div>
-          <div>Up to <span data-content="venue.capacity">250</span> guests.</div>
-        </div>
-        <div class="row-200">
-          <div class="u">Access</div>
-          <div data-content="room.specs.access">Second floor, elevator served, ADA compliant.</div>
-        </div>
-        <div class="row-200">
-          <div class="u">Included</div>
-          <div data-content="room.specs.included">Tables, chairs, setup and teardown, floor-length linens, an event attendant, and wifi.</div>
-        </div>
-        <div class="row-200">
-          <div class="u" style="color:#A05B45;">In-house</div>
-          <div data-content="room.specs.inhouse" data-content-html><span style="font-family:'Canela','Newsreader',serif; font-style:italic; font-size:22px; line-height:1.2;">A full bar &mdash; licensed and staffed by the venue.</span><br>Plus house sound system and projection. Ours to run, not a rental you arrange.</div>
-        </div>
-        <div class="row-200">
-          <div class="u">Catering</div>
-          <div data-content="room.specs.catering">Bring in any licensed caterer you like. No food is prepared on site &mdash; there&rsquo;s no commercial kitchen, so plan for a caterer who finishes off-premises.</div>
-        </div>
-        <div class="row-200">
-          <div class="u">Parking &amp; load-in</div>
-          <div data-content="room.specs.parking">Municipal lot behind the building and metered street parking on Washington. Rear load-in with elevator access to the second floor; deliveries and rentals come up the same way.</div>
-        </div>
+      <div class="gallery reveal d1">
+        <button class="gallery__item" type="button" aria-label="Open photo: the full hall">
+          <picture data-content="room.gallery.1">
+            <source type="image/webp" srcset="images/loft-hall-wide-1200.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-hall-wide-1200.jpg" alt="The full hall set with round tables, timber posts, and arched windows" loading="lazy" width="1200" height="900">
+          </picture>
+        </button>
+        <button class="gallery__item" type="button" aria-label="Open photo: the bar">
+          <picture data-content="room.gallery.2">
+            <source type="image/webp" srcset="images/loft-bar-view-760.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-bar-view-760.jpg" alt="The reclaimed-brick bar under its timber canopy, with tables beyond" loading="lazy" width="760" height="1013">
+          </picture>
+        </button>
+        <button class="gallery__item" type="button" aria-label="Open photo: the window wall">
+          <picture data-content="room.gallery.3">
+            <source type="image/webp" srcset="images/loft-window-wall-760.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-window-wall-760.jpg" alt="Sunlight through the arched windows onto tables in white linen" loading="lazy" width="760" height="1013">
+          </picture>
+        </button>
+        <button class="gallery__item" type="button" aria-label="Open photo: tables between the posts">
+          <picture data-content="room.gallery.4">
+            <source type="image/webp" srcset="images/loft-tables-posts-760.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-tables-posts-760.jpg" alt="Round tables arranged between the original timber posts" loading="lazy" width="760" height="1013">
+          </picture>
+        </button>
+        <button class="gallery__item" type="button" aria-label="Open photo: the farm tables">
+          <picture data-content="room.gallery.5">
+            <source type="image/webp" srcset="images/loft-farm-table-760.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-farm-table-760.jpg" alt="Rustic farm tables beside the dining floor" loading="lazy" width="760" height="1013">
+          </picture>
+        </button>
+        <button class="gallery__item" type="button" aria-label="Open photo: the bar and serving station">
+          <picture data-content="room.gallery.6">
+            <source type="image/webp" srcset="images/loft-bar-buffet-760.webp" sizes="(max-width: 900px) 50vw, 400px">
+            <img src="images/loft-bar-buffet-760.jpg" alt="The bar with beer taps and a serving station, looking down the hall" loading="lazy" width="760" height="1013">
+          </picture>
+        </button>
       </div>
     </div>
+  </section>
 
-  </div>
+  <section class="section section--paper">
+    <div class="wrap split split--top">
+      <div class="reveal">
+        <span class="eyebrow">The details</span>
+        <h2 class="h2">Everything a planner <em>asks first</em></h2>
+        <p class="lede">The plain facts, before you walk the room. Anything we have not covered, just ask.</p>
+        <div class="actions">
+          <a class="btn btn--ink" href="book-a-tour.html">Ask a question</a>
+        </div>
+      </div>
+      <dl class="facts reveal d1">
+        <div class="fact"><dt>Size</dt><dd data-content="room.specs.dimensions">About 4,500 square feet of open floor.</dd></div>
+        <div class="fact"><dt>Capacity</dt><dd>Up to <span data-content="venue.capacity">250</span> guests.</dd></div>
+        <div class="fact"><dt>Access</dt><dd data-content="room.specs.access">Second floor, with an elevator from the street entrance.</dd></div>
+        <div class="fact"><dt>Included</dt><dd data-content="room.specs.included">Tables, chairs, linens, setup and teardown, an event attendant, and wifi.</dd></div>
+        <div class="fact"><dt>In-house</dt><dd data-content="room.specs.inhouse" data-content-html><em>A full bar, licensed and staffed by the venue.</em> Plus a house sound system and projection.</dd></div>
+        <div class="fact"><dt>Catering</dt><dd data-content="room.specs.catering">Bring the licensed caterer of your choice. Food can be served and kept warm here, but there is no commercial kitchen for cooking on site.</dd></div>
+        <div class="fact"><dt>Parking &amp; load-in</dt><dd data-content="room.specs.parking">A municipal lot behind the building and metered street parking on Washington Street. Rear load-in with elevator access for deliveries and rentals.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta__media">
+      <picture>
+        <source type="image/webp" srcset="images/loft-tables-posts-1200.webp">
+        <img src="images/loft-tables-posts-1200.jpg" alt="" loading="lazy">
+      </picture>
+    </div>
+    <div class="wrap reveal">
+      <div class="ornament"><span></span></div>
+      <h2 class="h2">Photos are lovely. <em>Seeing it is better.</em></h2>
+      <p class="lede">Come walk the room with us. Bring your questions, your headcount, and anyone who gets a vote.</p>
+      <div class="actions">
+        <a class="btn" href="book-a-tour.html">Plan a visit</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
-  <div class="site-footer-inner">
-    <div>
-      <a class="wordmark" href="index.html" data-venue-name>The Loft at 708</a>
-      <p class="addr" data-content="contact.address">708 Washington Street, second floor &middot; Huntingdon, PA</p>
+  <div class="wrap">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="lockup" href="index.html" aria-label="The Loft at 708, home">
+          <span class="lockup__the" aria-hidden="true">The</span>
+          <span class="lockup__loft" aria-hidden="true">Loft</span>
+          <span class="lockup__num" aria-hidden="true">@708</span>
+        </a>
+        <p class="site-footer__tag">A historic downtown event hall for weddings, celebrations, and every gathering in between.</p>
+      </div>
+      <div>
+        <h2>Visit</h2>
+        <address><span data-content="contact.address">708 Washington Street, second floor</span><br>Huntingdon, PA</address>
+        <ul style="margin-top:14px">
+          <li><a data-config-link="maps" href="https://www.google.com/maps/search/?api=1&amp;query=708%20Washington%20Street%2C%20Huntingdon%2C%20PA" target="_blank" rel="noopener">Get directions</a></li>
+          <li data-requires="phone" hidden><a data-config-link="phone" data-config-text="phone" href="#">Call</a></li>
+          <li data-requires="email" hidden><a data-config-link="email" data-config-text="email" href="#">Email</a></li>
+          <li data-requires="facebook" hidden><a data-config-link="facebook" href="#" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="the-room.html">The Space</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="pricing.html">Rates</a></li>
+          <li><a href="for-your-guests.html">For your guests</a></li>
+          <li><a href="book-a-tour.html">Plan your event</a></li>
+        </ul>
+      </div>
     </div>
-    <nav aria-label="Footer">
-      <a href="the-room.html">The room</a>
-      <a href="weddings.html">Weddings</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="for-your-guests.html">For your guests</a>
-      <a href="book-a-tour.html">Book a tour</a>
-    </nav>
+    <div class="site-footer__bottom">
+      <span>&copy; <span data-year>2026</span> <span data-venue-name>The Loft at 708</span> &middot; Huntingdon, Pennsylvania</span>
+      <a href="book-a-tour.html">Plan your event</a>
+    </div>
   </div>
 </footer>
 </body>

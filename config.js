@@ -1,10 +1,23 @@
-// Single source of truth for the venue identity (client constraint:
-// nothing hardcodes the name — pages, titles, and templates read from here).
+// Single source of truth for the venue identity and contact details.
+// Pages, titles, and the inquiry form read from here; nothing hardcodes these.
+// Anything left empty simply does not show on the site (no dead links).
 window.VENUE = {
   name: 'The Loft at 708',
   shortName: 'The Loft at 708',
   address: '708 Washington Street, second floor',
   city: 'Huntingdon, PA',
+
+  // Michelle's public contact details. Empty means the matching link or line
+  // stays hidden.
+  facebookUrl: '',
+  email: '',
+  phone: '',
+
+  // Where the "Plan your event" form sends inquiries (a URL that accepts a
+  // JSON POST). Empty: the form falls back to opening an email to `email`,
+  // and with no email either it says plainly that it is not connected yet.
+  inquiryUrl: '',
+
   // Where js/content.js fetches owner-made content changes from. Empty or
   // unreachable means the site shows its built-in copy.
   contentUrl: 'https://diy-customer.vercel.app/api/content/loft',

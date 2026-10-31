@@ -213,7 +213,7 @@
       '[data-content]{outline:2px dashed rgba(160,91,69,.55);outline-offset:3px;cursor:pointer;transition:outline-color .12s,background-color .12s}' +
       '[data-content]:hover{outline:3px solid #A05B45;background-color:rgba(160,91,69,.08)}' +
       '[data-content].cp-flash{outline:3px solid #3f7d47;background-color:rgba(63,125,71,.12)}' +
-      'html.cp-edit .tarch-fade{opacity:1;animation:none}';
+      'html.cp-edit .tarch-fade,html.cp-edit .fade-up,html.cp-edit .reveal{opacity:1;animation:none;transform:none}';
     document.head.appendChild(style);
     document.documentElement.classList.add('cp-edit');
 

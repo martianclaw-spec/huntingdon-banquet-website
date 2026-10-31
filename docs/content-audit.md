@@ -188,3 +188,24 @@ untouched.
   fallback will paint after first render. If that flash matters, phase 2
   should inject values at deploy time (the Actions workflow can rewrite the
   HTML) rather than fetch in the browser.
+
+## Redesign, 2026-10-30
+
+The whole site was redesigned around the sign on Michelle's door (black
+plaque, gold roman capitals, hairline rules) and the finished-room photos.
+The overlay contract did not change: same `js/content.js`, same
+`data-content` markers, same checker.
+
+- **175 slots, 200 markers, 6 pages.** The inquiry page (`book-a-tour.html`)
+  now carries slots too.
+- **Ids kept where the meaning held**, so control-plane history stays
+  attached. Retired: `notice.label`, `notice.text` (the room is finished, the
+  "mid-renovation" bar is gone), the seven homepage tile prices and seven
+  tile photos (the homepage no longer shows prices), `home.adjacency.image`,
+  `room.dimensions`, `room.plan_note` (the floor plan was wrong and is gone).
+- **New:** `venue.sqft`, the homepage welcome, bar, finding-us, Facebook and
+  closing blocks, a photo slot for every page's main image, the six shared
+  gallery photos (`room.gallery.1` to `6`, used on the homepage and The
+  Space), and `inquire.*`.
+- Fallback copy was rewritten without em or en dashes (Matthew's standing
+  rule), so every seeded fallback changed. Re-seed after any config change.
