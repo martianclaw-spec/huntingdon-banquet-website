@@ -6,12 +6,14 @@ window.VENUE = {
   shortName: 'The Loft at 708',
   address: '708 Washington Street, second floor',
   city: 'Huntingdon, PA',
+  zip: '16652',
 
-  // Michele's public contact details (the Loft's, not her realtor office). Empty means the matching link or line
+  // The Loft's public contact details, as listed on its own Facebook page
+  // (not Michele's realtor office). Empty means the matching link or line
   // stays hidden.
-  facebookUrl: '',
-  email: '',
-  phone: '',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61594589293638',
+  email: 'mshovlin3@gmail.com',
+  phone: '(814) 386-2991',
 
   // Where the "Plan your event" form sends inquiries (a URL that accepts a
   // JSON POST). Empty: the form falls back to opening an email to `email`,

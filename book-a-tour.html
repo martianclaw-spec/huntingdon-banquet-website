@@ -59,8 +59,8 @@
   <section class="hero hero--page" style="min-height:60vh; min-height:60svh;">
     <div class="hero__media">
       <picture data-content="inquire.hero.image">
-        <source type="image/webp" srcset="images/loft-hall-wide-1200.webp 1200w, images/loft-hall-wide-2000.webp 2000w" sizes="100vw">
-        <img src="images/loft-hall-wide-2000.jpg" srcset="images/loft-hall-wide-1200.jpg 1200w, images/loft-hall-wide-2000.jpg 2000w" sizes="100vw" alt="The hall set with round tables under the arched windows" fetchpriority="high">
+        <source type="image/webp" srcset="images/loft-windows-post-1200.webp 1200w, images/loft-windows-post-2000.webp 2000w" sizes="100vw">
+        <img src="images/loft-windows-post-2000.jpg" srcset="images/loft-windows-post-1200.jpg 1200w, images/loft-windows-post-2000.jpg 2000w" sizes="100vw" alt="Arched windows in the exposed brick wall" fetchpriority="high">
       </picture>
     </div>
     <div class="hero__shade"></div>
@@ -113,6 +113,24 @@
             <div class="field">
               <label for="f-guests">About how many guests?</label>
               <input class="input" id="f-guests" name="guests" type="number" min="1" max="1000" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="f-flex">Are your dates flexible?</label>
+              <select class="input" id="f-flex" name="flexible">
+                <option value="">Choose one</option>
+                <option>Yes, we are open</option>
+                <option>A little</option>
+                <option>No, this date only</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-contact">Best way to reach you</label>
+              <select class="input" id="f-contact" name="contactBy">
+                <option value="">Choose one</option>
+                <option>Email</option>
+                <option>Phone call</option>
+                <option>Text message</option>
+              </select>
             </div>
             <div class="field field--full">
               <label for="f-message">Tell us about it</label>

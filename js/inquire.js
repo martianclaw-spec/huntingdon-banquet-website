@@ -66,6 +66,8 @@
       eventType: form.elements.eventType.value,
       date: form.elements.date.value,
       guests: form.elements.guests.value,
+      flexible: form.elements.flexible.value,
+      contactBy: form.elements.contactBy.value,
       tour: form.elements.tour.checked,
       message: form.elements.message.value.trim(),
       company_website: form.elements.company_website.value,
@@ -101,6 +103,8 @@
       data.eventType ? 'Event: ' + data.eventType : '',
       data.date ? 'Date: ' + prettyDate(data.date) : '',
       data.guests ? 'Guests: about ' + data.guests : '',
+      data.flexible ? 'Dates flexible: ' + data.flexible : '',
+      data.contactBy ? 'Best way to reach me: ' + data.contactBy : '',
       data.tour ? 'Would like to see the room in person.' : '',
     ].filter(Boolean);
     var body = facts.join('\n') + (data.message ? '\n\n' + data.message : '');

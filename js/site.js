@@ -121,6 +121,26 @@
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // ---- in-page menu: underline the section being read ----
+
+  var subLinks = Array.prototype.slice.call(document.querySelectorAll('.subnav a[href^="#"]'));
+  if (subLinks.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    subLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        subLinks.forEach(function (a) { a.classList.remove('is-active'); });
+        var link = byId[entry.target.id];
+        if (link) link.classList.add('is-active');
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    Object.keys(byId).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  }
+
   // ---- photo lightbox ----
   //
   // Gallery items are buttons wrapping a <picture>. The lightbox shows the

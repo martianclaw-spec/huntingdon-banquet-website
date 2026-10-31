@@ -209,3 +209,18 @@ The overlay contract did not change: same `js/content.js`, same
   Space), and `inquire.*`.
 - Fallback copy was rewritten without em or en dashes (Matthew's standing
   rule), so every seeded fallback changed. Re-seed after any config change.
+
+## Real facts and venue research, 2026-10-30 (same day)
+
+Facts now come from Michele's own Facebook page ("The LOFT at 708"): the
+Miller Building, capacity 279, kitchenette, sound system, her event list,
+her taglines, and the page's public phone, email, and link (in
+`config.js`). Ten of her room photos were added. Patterns from a review of
+13 top venue sites were applied: a sticky in-page menu, a "How it works"
+timeline, and an FAQ on Weddings; a dates-flexible and contact-preference
+question on the form; lighter display type; schema.org EventVenue data.
+
+Slots: 186 (was 175). Retired: the celebrations, graduations, and banquets
+occasions, and `venue.sqft`. Added: the birthdays, fundraisers, and holidays
+occasions, `room.gallery.7` to `9`, `room.specs.building`, and
+`weddings.faq.1` to `8`.
